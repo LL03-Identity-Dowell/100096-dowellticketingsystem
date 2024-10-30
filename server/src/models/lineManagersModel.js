@@ -42,4 +42,4 @@ const lineManagerSchema = new mongoose.Schema({
     timestamps: true  // automatically adds createdAt and updatedAt fields
 })
 
-export default mongoose.model('LineManager', lineManagerSchema)
+export default mongoose.model('lineManagerModel', lineManagerSchema)

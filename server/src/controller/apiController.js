@@ -26,7 +26,7 @@ export default {
     },
 
 
-    login:  async (req, res, next) => {
+    createTicket:  async (req, res, next) => {
         try {
             httpResponse(req, res, 200, responseMessage.SUCCESS);
         } catch (err) {

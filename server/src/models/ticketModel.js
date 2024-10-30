@@ -41,7 +41,7 @@ const ticketSchema = new mongoose.Schema(
         },
         line_manager: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
+            ref: 'lineManagerModel',
             required: false
         },
         is_closed: {

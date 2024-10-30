@@ -13,7 +13,7 @@ const create = async (req, res) => {
             });
         }
 
-        // Create and save the new ticket
+        // Create and save the new ticket             
         const ticketData = new Ticket(req.body);
         const newTicket = await ticketData.save();
 
