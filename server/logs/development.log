@@ -5439,3 +5439,1461 @@
         "SERVER_URL": "http://localhost:5000"
     }
 }
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T12:40:04.853Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T12:40:04.862Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T12:40:04.862Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-10-30T12:40:14.284Z",
+    "meta": {
+        "success": true,
+        "statusCode": 201,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/api/v1/create-ticket"
+        },
+        "message": "Data created successfully",
+        "data": {
+            "email": "user@example.com",
+            "link_id": "64dbf8d72e7fbd7b8d60f1a2",
+            "workspace_id": "64dbf8e14e8fbd7b8d60f1b3",
+            "department": "IT Support",
+            "user_id": "64dbf8f27a9fbd7b8d60f1c4",
+            "public_id": "TICKET12345",
+            "product": "Software License",
+            "display_name": "John Doe",
+            "line_manager": "64dbf9005e9fbd7b8d60f1d5",
+            "is_closed": false,
+            "waiting_time": 5,
+            "document_id": "64dbf90c3b5fbd7b8d60f1e6",
+            "_id": "6722292d188d1f71b7d1eaeb",
+            "createdAt": "2024-10-30T12:40:13.977Z",
+            "updatedAt": "2024-10-30T12:40:13.977Z",
+            "__v": 0
+        }
+    }
+}
+{
+    "level": "ERROR",
+    "message": "APPLICATION_ERROR",
+    "timestamp": "2024-10-30T12:53:16.270Z",
+    "meta": {
+        "code": "ETIMEOUT",
+        "syscall": "queryTxt",
+        "hostname": "cluster0.1t7sf.mongodb.net"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T12:54:00.535Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T12:54:00.544Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T12:54:00.544Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T12:54:37.326Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T12:54:37.334Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T12:54:37.335Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "ERROR",
+    "message": "APPLICATION_ERROR",
+    "timestamp": "2024-10-30T12:56:06.662Z",
+    "meta": {
+        "code": "ETIMEOUT",
+        "syscall": "queryTxt",
+        "hostname": "cluster0.1t7sf.mongodb.net"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T12:56:31.868Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T12:56:31.876Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T12:56:31.876Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "ERROR",
+    "message": "APPLICATION_ERROR",
+    "timestamp": "2024-10-30T12:58:34.204Z",
+    "meta": {
+        "message": "getaddrinfo ENOTFOUND cluster0-shard-00-02.1t7sf.mongodb.net",
+        "reason": {
+            "type": "ReplicaSetNoPrimary",
+            "servers": {
+                "cluster0-shard-00-00.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                    "type": "RSSecondary",
+                    "hosts": [
+                        "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-02.1t7sf.mongodb.net:27017"
+                    ],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {
+                        "diskState": "READY",
+                        "availabilityZone": "usw2-az1",
+                        "nodeType": "ELECTABLE",
+                        "region": "US_WEST_2",
+                        "provider": "AWS",
+                        "workloadType": "OPERATIONAL"
+                    },
+                    "minWireVersion": 0,
+                    "maxWireVersion": 21,
+                    "roundTripTime": 297,
+                    "minRoundTripTime": 297,
+                    "lastUpdateTime": 140478638,
+                    "lastWriteDate": {
+                        "$date": "2024-10-30T12:58:32Z"
+                    },
+                    "error": null,
+                    "topologyVersion": {
+                        "processId": {
+                            "$oid": "6721fd9f3e979b7435faa155"
+                        },
+                        "counter": 4
+                    },
+                    "setName": "atlas-1pq7um-shard-0",
+                    "setVersion": 105,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": 30,
+                    "primary": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "me": "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                    "$clusterTime": {
+                        "clusterTime": {
+                            "$timestamp": {
+                                "t": 1730293112,
+                                "i": 14
+                            }
+                        },
+                        "signature": {
+                            "hash": {
+                                "$binary": {
+                                    "base64": "8EIUikx3NAnSDnh7DXeLbg//r/Y=",
+                                    "subType": "00"
+                                }
+                            },
+                            "keyId": 7377472101797593000
+                        }
+                    }
+                },
+                "cluster0-shard-00-01.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                    "type": "RSSecondary",
+                    "hosts": [
+                        "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-02.1t7sf.mongodb.net:27017"
+                    ],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {
+                        "availabilityZone": "usw2-az2",
+                        "nodeType": "ELECTABLE",
+                        "workloadType": "OPERATIONAL",
+                        "provider": "AWS",
+                        "region": "US_WEST_2",
+                        "diskState": "READY"
+                    },
+                    "minWireVersion": 0,
+                    "maxWireVersion": 21,
+                    "roundTripTime": 2743.6666666666665,
+                    "minRoundTripTime": 349,
+                    "lastUpdateTime": 140478400,
+                    "lastWriteDate": {
+                        "$date": "2024-10-30T12:58:32Z"
+                    },
+                    "error": null,
+                    "topologyVersion": {
+                        "processId": {
+                            "$oid": "6721fee3620b065e66279566"
+                        },
+                        "counter": 3
+                    },
+                    "setName": "atlas-1pq7um-shard-0",
+                    "setVersion": 105,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": 30,
+                    "primary": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "me": "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                    "$clusterTime": {
+                        "clusterTime": {
+                            "$timestamp": {
+                                "t": 1730293112,
+                                "i": 10
+                            }
+                        },
+                        "signature": {
+                            "hash": {
+                                "$binary": {
+                                    "base64": "8EIUikx3NAnSDnh7DXeLbg//r/Y=",
+                                    "subType": "00"
+                                }
+                            },
+                            "keyId": 7377472101797593000
+                        }
+                    }
+                },
+                "cluster0-shard-00-02.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "type": "Unknown",
+                    "hosts": [],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {},
+                    "minWireVersion": 0,
+                    "maxWireVersion": 0,
+                    "roundTripTime": -1,
+                    "minRoundTripTime": 0,
+                    "lastUpdateTime": 140479017,
+                    "lastWriteDate": 0,
+                    "error": {},
+                    "topologyVersion": null,
+                    "setName": null,
+                    "setVersion": null,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": null,
+                    "primary": null,
+                    "me": null,
+                    "$clusterTime": null
+                }
+            },
+            "stale": false,
+            "compatible": true,
+            "heartbeatFrequencyMS": 10000,
+            "localThresholdMS": 15,
+            "setName": "atlas-1pq7um-shard-0",
+            "maxElectionId": null,
+            "maxSetVersion": null,
+            "commonWireVersion": 0,
+            "logicalSessionTimeoutMinutes": 30
+        }
+    }
+}
+{
+    "level": "ERROR",
+    "message": "APPLICATION_ERROR",
+    "timestamp": "2024-10-30T13:03:35.061Z",
+    "meta": {
+        "message": "connect ETIMEDOUT 54.218.42.59:27017",
+        "reason": {
+            "type": "ReplicaSetNoPrimary",
+            "servers": {
+                "cluster0-shard-00-00.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                    "type": "Unknown",
+                    "hosts": [],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {},
+                    "minWireVersion": 0,
+                    "maxWireVersion": 0,
+                    "roundTripTime": -1,
+                    "minRoundTripTime": 0,
+                    "lastUpdateTime": 140775073,
+                    "lastWriteDate": 0,
+                    "error": {},
+                    "topologyVersion": null,
+                    "setName": null,
+                    "setVersion": null,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": null,
+                    "primary": null,
+                    "me": null,
+                    "$clusterTime": null
+                },
+                "cluster0-shard-00-01.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                    "type": "RSSecondary",
+                    "hosts": [
+                        "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-02.1t7sf.mongodb.net:27017"
+                    ],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {
+                        "availabilityZone": "usw2-az2",
+                        "nodeType": "ELECTABLE",
+                        "region": "US_WEST_2",
+                        "diskState": "READY",
+                        "provider": "AWS",
+                        "workloadType": "OPERATIONAL"
+                    },
+                    "minWireVersion": 0,
+                    "maxWireVersion": 21,
+                    "roundTripTime": 331,
+                    "minRoundTripTime": 0,
+                    "lastUpdateTime": 140762089,
+                    "lastWriteDate": {
+                        "$date": "2024-10-30T13:03:15Z"
+                    },
+                    "error": null,
+                    "topologyVersion": {
+                        "processId": {
+                            "$oid": "6721fee3620b065e66279566"
+                        },
+                        "counter": 3
+                    },
+                    "setName": "atlas-1pq7um-shard-0",
+                    "setVersion": 105,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": 30,
+                    "primary": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "me": "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                    "$clusterTime": {
+                        "clusterTime": {
+                            "$timestamp": {
+                                "t": 1730293395,
+                                "i": 17
+                            }
+                        },
+                        "signature": {
+                            "hash": {
+                                "0": 35,
+                                "1": 12,
+                                "2": 40,
+                                "3": 148,
+                                "4": 54,
+                                "5": 238,
+                                "6": 69,
+                                "7": 88,
+                                "8": 230,
+                                "9": 219,
+                                "10": 201,
+                                "11": 122,
+                                "12": 18,
+                                "13": 98,
+                                "14": 248,
+                                "15": 230,
+                                "16": 42,
+                                "17": 34,
+                                "18": 97,
+                                "19": 151
+                            },
+                            "keyId": 7377472101797593000
+                        }
+                    }
+                },
+                "cluster0-shard-00-02.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "type": "Unknown",
+                    "hosts": [],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {},
+                    "minWireVersion": 0,
+                    "maxWireVersion": 0,
+                    "roundTripTime": -1,
+                    "minRoundTripTime": 0,
+                    "lastUpdateTime": 140775074,
+                    "lastWriteDate": 0,
+                    "error": {},
+                    "topologyVersion": null,
+                    "setName": null,
+                    "setVersion": null,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": null,
+                    "primary": null,
+                    "me": null,
+                    "$clusterTime": null
+                }
+            },
+            "stale": false,
+            "compatible": true,
+            "heartbeatFrequencyMS": 10000,
+            "localThresholdMS": 15,
+            "setName": "atlas-1pq7um-shard-0",
+            "maxElectionId": null,
+            "maxSetVersion": null,
+            "commonWireVersion": 0,
+            "logicalSessionTimeoutMinutes": 30
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:04:58.140Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:04:58.146Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:04:58.147Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:05:15.865Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:05:15.876Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:05:15.877Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "ERROR",
+    "message": "APPLICATION_ERROR",
+    "timestamp": "2024-10-30T13:06:42.016Z",
+    "meta": {
+        "code": "ETIMEOUT",
+        "syscall": "querySrv",
+        "hostname": "_mongodb._tcp.cluster0.1t7sf.mongodb.net"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:07:25.780Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:07:25.788Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:07:25.788Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:09:05.167Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:09:05.191Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:09:05.202Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:10:28.700Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:10:28.706Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:10:28.706Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "ERROR",
+    "message": "APPLICATION_ERROR",
+    "timestamp": "2024-10-30T13:13:31.072Z",
+    "meta": {
+        "message": "getaddrinfo ENOTFOUND cluster0-shard-00-00.1t7sf.mongodb.net",
+        "reason": {
+            "type": "ReplicaSetNoPrimary",
+            "servers": {
+                "cluster0-shard-00-00.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                    "type": "Unknown",
+                    "hosts": [],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {},
+                    "minWireVersion": 0,
+                    "maxWireVersion": 0,
+                    "roundTripTime": -1,
+                    "minRoundTripTime": 0,
+                    "lastUpdateTime": 141361409,
+                    "lastWriteDate": 0,
+                    "error": {},
+                    "topologyVersion": null,
+                    "setName": null,
+                    "setVersion": null,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": null,
+                    "primary": null,
+                    "me": null,
+                    "$clusterTime": null
+                },
+                "cluster0-shard-00-01.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                    "type": "RSSecondary",
+                    "hosts": [
+                        "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-02.1t7sf.mongodb.net:27017"
+                    ],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {
+                        "region": "US_WEST_2",
+                        "provider": "AWS",
+                        "workloadType": "OPERATIONAL",
+                        "availabilityZone": "usw2-az2",
+                        "diskState": "READY",
+                        "nodeType": "ELECTABLE"
+                    },
+                    "minWireVersion": 0,
+                    "maxWireVersion": 21,
+                    "roundTripTime": 309,
+                    "minRoundTripTime": 309,
+                    "lastUpdateTime": 141374098,
+                    "lastWriteDate": {
+                        "$date": "2024-10-30T13:13:27Z"
+                    },
+                    "error": null,
+                    "topologyVersion": {
+                        "processId": {
+                            "$oid": "6721fee3620b065e66279566"
+                        },
+                        "counter": 3
+                    },
+                    "setName": "atlas-1pq7um-shard-0",
+                    "setVersion": 105,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": 30,
+                    "primary": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "me": "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                    "$clusterTime": {
+                        "clusterTime": {
+                            "$timestamp": {
+                                "t": 1730294007,
+                                "i": 12
+                            }
+                        },
+                        "signature": {
+                            "hash": {
+                                "$binary": {
+                                    "base64": "7FEFVrLN99V+671KFOuiePVIYNw=",
+                                    "subType": "00"
+                                }
+                            },
+                            "keyId": 7377472101797593000
+                        }
+                    }
+                },
+                "cluster0-shard-00-02.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "type": "Unknown",
+                    "hosts": [],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {},
+                    "minWireVersion": 0,
+                    "maxWireVersion": 0,
+                    "roundTripTime": -1,
+                    "minRoundTripTime": 0,
+                    "lastUpdateTime": 141349932,
+                    "lastWriteDate": 0,
+                    "error": null,
+                    "topologyVersion": null,
+                    "setName": null,
+                    "setVersion": null,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": null,
+                    "primary": null,
+                    "me": null,
+                    "$clusterTime": null
+                }
+            },
+            "stale": false,
+            "compatible": true,
+            "heartbeatFrequencyMS": 10000,
+            "localThresholdMS": 15,
+            "setName": "atlas-1pq7um-shard-0",
+            "maxElectionId": null,
+            "maxSetVersion": null,
+            "commonWireVersion": 0,
+            "logicalSessionTimeoutMinutes": 30
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:13:49.727Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:13:49.737Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:13:49.738Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:18:24.245Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:18:24.253Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:18:24.254Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "ERROR",
+    "message": "APPLICATION_ERROR",
+    "timestamp": "2024-10-30T13:20:49.010Z",
+    "meta": {
+        "message": "getaddrinfo EAI_AGAIN cluster0-shard-00-02.1t7sf.mongodb.net",
+        "reason": {
+            "type": "ReplicaSetNoPrimary",
+            "servers": {
+                "cluster0-shard-00-00.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                    "type": "RSSecondary",
+                    "hosts": [
+                        "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-02.1t7sf.mongodb.net:27017"
+                    ],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {
+                        "availabilityZone": "usw2-az1",
+                        "nodeType": "ELECTABLE",
+                        "workloadType": "OPERATIONAL",
+                        "region": "US_WEST_2",
+                        "provider": "AWS",
+                        "diskState": "READY"
+                    },
+                    "minWireVersion": 0,
+                    "maxWireVersion": 21,
+                    "roundTripTime": 2878.3333333333335,
+                    "minRoundTripTime": 315,
+                    "lastUpdateTime": 141810816,
+                    "lastWriteDate": {
+                        "$date": "2024-10-30T13:20:44Z"
+                    },
+                    "error": null,
+                    "topologyVersion": {
+                        "processId": {
+                            "$oid": "6721fd9f3e979b7435faa155"
+                        },
+                        "counter": 4
+                    },
+                    "setName": "atlas-1pq7um-shard-0",
+                    "setVersion": 105,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": 30,
+                    "primary": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "me": "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                    "$clusterTime": {
+                        "clusterTime": {
+                            "$timestamp": {
+                                "t": 1730294444,
+                                "i": 13
+                            }
+                        },
+                        "signature": {
+                            "hash": {
+                                "$binary": {
+                                    "base64": "+1QVTXVFKsCDqD2Ms9sHjrpPd+c=",
+                                    "subType": "00"
+                                }
+                            },
+                            "keyId": 7377472101797593000
+                        }
+                    }
+                },
+                "cluster0-shard-00-01.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                    "type": "RSSecondary",
+                    "hosts": [
+                        "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-02.1t7sf.mongodb.net:27017"
+                    ],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {
+                        "availabilityZone": "usw2-az2",
+                        "nodeType": "ELECTABLE",
+                        "region": "US_WEST_2",
+                        "diskState": "READY",
+                        "provider": "AWS",
+                        "workloadType": "OPERATIONAL"
+                    },
+                    "minWireVersion": 0,
+                    "maxWireVersion": 21,
+                    "roundTripTime": 3319.3333333333335,
+                    "minRoundTripTime": 317,
+                    "lastUpdateTime": 141817880,
+                    "lastWriteDate": {
+                        "$date": "2024-10-30T13:20:51Z"
+                    },
+                    "error": null,
+                    "topologyVersion": {
+                        "processId": {
+                            "$oid": "6721fee3620b065e66279566"
+                        },
+                        "counter": 3
+                    },
+                    "setName": "atlas-1pq7um-shard-0",
+                    "setVersion": 105,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": 30,
+                    "primary": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "me": "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                    "$clusterTime": {
+                        "clusterTime": {
+                            "$timestamp": {
+                                "t": 1730294451,
+                                "i": 19
+                            }
+                        },
+                        "signature": {
+                            "hash": {
+                                "$binary": {
+                                    "base64": "cVKQd8zAu2c1gubCSfgc8R5IB0w=",
+                                    "subType": "00"
+                                }
+                            },
+                            "keyId": 7377472101797593000
+                        }
+                    }
+                },
+                "cluster0-shard-00-02.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "type": "Unknown",
+                    "hosts": [],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {},
+                    "minWireVersion": 0,
+                    "maxWireVersion": 0,
+                    "roundTripTime": -1,
+                    "minRoundTripTime": 0,
+                    "lastUpdateTime": 141817946,
+                    "lastWriteDate": 0,
+                    "error": {},
+                    "topologyVersion": null,
+                    "setName": null,
+                    "setVersion": null,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": null,
+                    "primary": null,
+                    "me": null,
+                    "$clusterTime": null
+                }
+            },
+            "stale": false,
+            "compatible": true,
+            "heartbeatFrequencyMS": 10000,
+            "localThresholdMS": 15,
+            "setName": "atlas-1pq7um-shard-0",
+            "maxElectionId": null,
+            "maxSetVersion": null,
+            "commonWireVersion": 0,
+            "logicalSessionTimeoutMinutes": 30
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:21:19.351Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:21:19.357Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:21:19.357Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "ERROR",
+    "message": "APPLICATION_ERROR",
+    "timestamp": "2024-10-30T13:23:44.152Z",
+    "meta": {
+        "code": "ETIMEOUT",
+        "syscall": "querySrv",
+        "hostname": "_mongodb._tcp.cluster0.1t7sf.mongodb.net"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:24:33.585Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:24:33.596Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:24:33.597Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:29:20.812Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:29:20.819Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:29:20.820Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T13:29:45.708Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T13:29:45.716Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T13:29:45.717Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:08:31.519Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:08:31.569Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:08:31.570Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:13:36.087Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:13:36.105Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:13:36.107Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "ERROR",
+    "message": "APPLICATION_ERROR",
+    "timestamp": "2024-10-30T14:16:40.831Z",
+    "meta": {
+        "message": "connect ETIMEDOUT 54.218.42.59:27017",
+        "reason": {
+            "type": "ReplicaSetNoPrimary",
+            "servers": {
+                "cluster0-shard-00-00.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                    "type": "Unknown",
+                    "hosts": [],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {},
+                    "minWireVersion": 0,
+                    "maxWireVersion": 0,
+                    "roundTripTime": -1,
+                    "minRoundTripTime": 0,
+                    "lastUpdateTime": 145161758,
+                    "lastWriteDate": 0,
+                    "error": {},
+                    "topologyVersion": null,
+                    "setName": null,
+                    "setVersion": null,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": null,
+                    "primary": null,
+                    "me": null,
+                    "$clusterTime": null
+                },
+                "cluster0-shard-00-01.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                    "type": "Unknown",
+                    "hosts": [],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {},
+                    "minWireVersion": 0,
+                    "maxWireVersion": 0,
+                    "roundTripTime": -1,
+                    "minRoundTripTime": 0,
+                    "lastUpdateTime": 145161761,
+                    "lastWriteDate": 0,
+                    "error": {},
+                    "topologyVersion": null,
+                    "setName": null,
+                    "setVersion": null,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": null,
+                    "primary": null,
+                    "me": null,
+                    "$clusterTime": null
+                },
+                "cluster0-shard-00-02.1t7sf.mongodb.net:27017": {
+                    "address": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "type": "RSSecondary",
+                    "hosts": [
+                        "cluster0-shard-00-00.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                        "cluster0-shard-00-02.1t7sf.mongodb.net:27017"
+                    ],
+                    "passives": [],
+                    "arbiters": [],
+                    "tags": {
+                        "workloadType": "OPERATIONAL",
+                        "diskState": "READY",
+                        "nodeType": "ELECTABLE",
+                        "provider": "AWS",
+                        "region": "US_WEST_2",
+                        "availabilityZone": "usw2-az3"
+                    },
+                    "minWireVersion": 0,
+                    "maxWireVersion": 21,
+                    "roundTripTime": 331,
+                    "minRoundTripTime": 331,
+                    "lastUpdateTime": 145163619,
+                    "lastWriteDate": {
+                        "$date": "2024-10-30T14:16:37Z"
+                    },
+                    "error": null,
+                    "topologyVersion": {
+                        "processId": {
+                            "$oid": "6722360743ebc7ed0d8332d5"
+                        },
+                        "counter": 5
+                    },
+                    "setName": "atlas-1pq7um-shard-0",
+                    "setVersion": 108,
+                    "electionId": null,
+                    "logicalSessionTimeoutMinutes": 30,
+                    "primary": "cluster0-shard-00-01.1t7sf.mongodb.net:27017",
+                    "me": "cluster0-shard-00-02.1t7sf.mongodb.net:27017",
+                    "$clusterTime": {
+                        "clusterTime": {
+                            "$timestamp": {
+                                "t": 1730297797,
+                                "i": 11
+                            }
+                        },
+                        "signature": {
+                            "hash": {
+                                "$binary": {
+                                    "base64": "BqXLS4FZPdmJ4H54bDAF7lco4F8=",
+                                    "subType": "00"
+                                }
+                            },
+                            "keyId": 7377472101797593000
+                        }
+                    }
+                }
+            },
+            "stale": false,
+            "compatible": true,
+            "heartbeatFrequencyMS": 10000,
+            "localThresholdMS": 15,
+            "setName": "atlas-1pq7um-shard-0",
+            "maxElectionId": null,
+            "maxSetVersion": null,
+            "commonWireVersion": 0,
+            "logicalSessionTimeoutMinutes": 30
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:18:34.756Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:18:34.767Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:18:34.768Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:19:34.984Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:19:35.007Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:19:35.009Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:20:08.666Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:20:08.676Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:20:08.677Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:23:19.377Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:23:19.387Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:23:19.388Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-10-30T14:23:26.989Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "DELETE",
+            "url": "/api/v1/delete-ticket"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:25:03.680Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:25:03.693Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:25:03.694Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:26:12.421Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:26:12.435Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:26:12.436Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:28:07.190Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:28:07.203Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:28:07.204Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:29:15.582Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:29:15.594Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:29:15.595Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:30:54.421Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:30:54.442Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:30:54.444Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:34:55.726Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:34:55.747Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:34:55.751Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-30T14:36:36.411Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-30T14:36:36.424Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-30T14:36:36.426Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-10-30T14:36:41.140Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "DELETE",
+            "url": "/api/v1/delete-ticket/6721dde25cdfb35cf93973e1"
+        },
+        "message": "The operation has been successful",
+        "data": "Ticket with ID 6721dde25cdfb35cf93973e1 has been deleted."
+    }
+}

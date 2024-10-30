@@ -1,6 +1,16 @@
 import errorObject from './errorObject.js';
 
-export default (nextFunc, err, req, errorStatusCode = 500) => {
-    const errorObj = errorObject(err, req, errorStatusCode);
-    return nextFunc(errorObj);
+export default (req, res, errorStatusCode = 500, message = null, errorDetails = null) => {
+    const error = new Error(message || 'An unexpected error occurred');
+    const errorObj = errorObject(error, req, errorStatusCode);
+
+    // Override default message with custom message if provided
+    if (message) {
+        errorObj.message = message;
+    }
+    if (errorDetails) {
+        errorObj.trace = { error: errorDetails };
+    }
+
+    res.status(errorStatusCode).json(errorObj);
 };

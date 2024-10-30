@@ -10,12 +10,12 @@ const ticketSchema = new mongoose.Schema(
         link_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Link',
-            required: false
+            required: true
         },
         workspace_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Workspace',
-            required: false
+            required: true
         },
         department: {
             type: String,
@@ -24,7 +24,7 @@ const ticketSchema = new mongoose.Schema(
         user_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
-            required: false
+            required: true
         },
     
         public_id: {
@@ -42,7 +42,7 @@ const ticketSchema = new mongoose.Schema(
         line_manager: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'lineManagerModel',
-            required: false
+            required: true
         },
         is_closed: {
             type: Boolean,
