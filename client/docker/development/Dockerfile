@@ -7,11 +7,17 @@ WORKDIR /usr/src/app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Suppress non-critical warnings
+ENV NODE_NO_WARNINGS=1
+
+# Clear npm cache and install dependencies
+# - `--legacy-peer-deps`: Allows installation despite peer dependency conflicts
+# - `--loglevel=error`: Reduces verbosity to suppress non-critical warnings
+RUN npm cache clean --force && npm install --legacy-peer-deps --loglevel=error
 
 # Install Vite globally
-RUN npm install -g vite
+RUN npm install -g vite --no-fund --no-audit
+
 
 # Copy the rest of the code
 COPY . .

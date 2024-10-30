@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "devDependencies":{
+  "devDependencies": {
     "nodemon": "^3.1.4"
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "helmet": "^7.1.0",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
+    "kafkajs": "^2.2.4",
     "libphonenumber-js": "^1.11.8",
     "mongoose": "^8.6.2",
     "rate-limiter-flexible": "^5.0.3",

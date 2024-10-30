@@ -5,6 +5,7 @@ export default {
     connect: async () => {
         try {
             await mongoose.connect(config.DATABASE_URL);
+            console.log("Database connected successfully")
             return mongoose.connection;
         } catch (err) {
             throw err;

@@ -4,15 +4,19 @@ import { createLogger, format, transports } from 'winston';
 import config from '../config/config.js';
 import { EApplicationEnvironment } from '../constant/application.js';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { red, blue, yellow, green, magenta } from 'colorette';
 import * as sourceMapSupport from 'source-map-support';
+import fs from 'fs';
 
 // Linking Trace Support
 sourceMapSupport.install();
 
-const __filename = new URL(import.meta.url).pathname;
+// Correctly derive __filename and __dirname
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Function to colorize log levels
 const colorizeLevel = (level) => {
     switch (level) {
         case 'ERROR':
@@ -26,6 +30,7 @@ const colorizeLevel = (level) => {
     }
 };
 
+// Console log format for development
 const consoleLogFormat = format.printf((info) => {
     const { level, message, timestamp, meta = {} } = info;
 
@@ -41,6 +46,7 @@ const consoleLogFormat = format.printf((info) => {
     return `${customLevel} [${customTimestamp}] ${customMessage}\n${magenta('META')} ${customMeta}\n`;
 });
 
+// Console transport for development environment
 const consoleTransport = () => {
     if (config.ENV === EApplicationEnvironment.DEVELOPMENT) {
         return [
@@ -53,6 +59,7 @@ const consoleTransport = () => {
     return [];
 };
 
+// File log format for file transport
 const fileLogFormat = format.printf((info) => {
     const { level, message, timestamp, meta = {} } = info;
     const logMeta = {};
@@ -79,16 +86,26 @@ const fileLogFormat = format.printf((info) => {
     return JSON.stringify(logData, null, 4);
 });
 
+// Define the logs directory using path.resolve
+const logDir = path.resolve(__dirname, '../../logs');
+
+// Ensure the logs directory exists
+if (!fs.existsSync(logDir)) {
+    fs.mkdirSync(logDir, { recursive: true });
+}
+
+// File transport for saving logs to a file
 const fileTransport = () => {
     return [
         new transports.File({
-            filename: path.join(__dirname, '../', '../', 'logs', `${config.ENV}.log`),
+            filename: path.join(logDir, `${config.ENV}.log`),
             level: 'info',
             format: format.combine(format.timestamp(), fileLogFormat),
         }),
     ];
 };
 
+// MongoDB transport for saving logs to MongoDB
 const mongodbTransport = () => {
     return [
         new transports.MongoDB({
@@ -104,6 +121,7 @@ const mongodbTransport = () => {
     ];
 };
 
+// Create and export the logger
 export default createLogger({
     defaultMeta: {
         meta: {},

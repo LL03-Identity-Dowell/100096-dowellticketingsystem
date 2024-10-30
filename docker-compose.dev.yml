@@ -1,57 +1,84 @@
 version: '3.9'
 
 services:
-  mongo:
-    container_name: mongo_container
-    image: 'mongo'
-    volumes:
-      - mongo-data:/data/db
-    networks:
-      - queue-net
-    env_file: 
-      - ./.env.development
-    command: mongod --bind_ip_all
-    restart: always
+    mongo:
+        container_name: mongo_container
+        image: 'mongo'
+        volumes:
+            - mongo-data:/data/db
+        networks:
+            - queue-net
+        env_file:
+            - ./.env.development
+        command: mongod --bind_ip_all
+        restart: always
 
-  client:
-    container_name: client
-    build:
-      context: ./client
-      dockerfile: docker/development/Dockerfile
-    ports:
-      - '5173:5173'
-    restart: always
-    env_file: 
-      - ./.env.development
-    volumes:
-      - ./client/src:/usr/src/app/src
-      - ./client/package.json:/usr/src/app/package.json
-    depends_on:
-      - server
-    networks:
-      - queue-net
+    client:
+        container_name: client
+        build:
+            context: ./client
+            dockerfile: docker/development/Dockerfile
+        ports:
+            - '5173:5173'
+        restart: always
+        env_file:
+            - ./.env.development
+        volumes:
+            - ./client/src:/usr/src/app/src
+            - ./client/package.json:/usr/src/app/package.json
+        depends_on:
+            - server
+        networks:
+            - queue-net
 
-  server:
-    container_name: server
-    build:
-      context: ./server
-      dockerfile: docker/development/Dockerfile
-    ports:
-      - '5000:5000'
-    depends_on:
-      - mongo
-    env_file: 
-      - ./.env.development
-    volumes:
-      - ./server/src:/usr/src/app/src
-      - ./server/package.json:/usr/src/app/package.json
-      - ./server/nodemon.json:/usr/src/app/nodemon.json
-    networks:
-      - queue-net
+    server:
+        container_name: server
+        build:
+            context: ./server
+            dockerfile: docker/development/Dockerfile
+        ports:
+            - '5000:5000'
+        depends_on:
+            - mongo
+        env_file:
+            - ./.env.development
+        volumes:
+            - ./server/src:/usr/src/app/src
+            - ./server/package.json:/usr/src/app/package.json
+            - ./server/nodemon.json:/usr/src/app/nodemon.json
+        networks:
+            - queue-net
+
+    zookeeper:
+        container_name: zookeeper
+        image: confluentinc/cp-zookeeper:latest
+        environment:
+            ZOOKEEPER_CLIENT_PORT: 2181
+            ZOOKEEPER_TICK_TIME: 2000
+        ports:
+            - '2181:2181'
+        networks:
+            - queue-net
+
+    kafka:
+        container_name: kafka
+        image: confluentinc/cp-kafka:latest
+        depends_on:
+            - zookeeper
+        environment:
+            KAFKA_BROKER_ID: 1
+            KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+            KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+            KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT://localhost:9092
+            KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+        ports:
+            - '9092:9092'
+        networks:
+            - queue-net
 
 networks:
-  queue-net:
-    driver: bridge
+    queue-net:
+        driver: bridge
 
 volumes:
-  mongo-data:
+    mongo-data:
