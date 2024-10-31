@@ -3,7 +3,7 @@ import responseMessage from '../constant/responseMessage.js'
 import Ticket from '../models/ticketModel.js'
 import httpError from '../util/httpError.js'
 import httpResponse from '../util/httpResponse.js'
-import { ticketValidationSchema } from '../util/validationSchema.js'
+import { ticketValidationSchema } from '../service/validationService.js'
 
 const createTicket = async (req, res) => {
     try {
@@ -36,11 +36,9 @@ const createTicket = async (req, res) => {
 
 const deleteTicket = async (req, res) => {
     try {
-        const { id } = req.params; // Corrected line
+        const { id } = req.params; 
         console.log('Request params:', req.params);
-
         const ticket = await Ticket.findByIdAndDelete(id);
-
         if (!ticket) {
             return httpError(req, res, 404, responseMessage.NOT_FOUND('Ticket'));
         }
