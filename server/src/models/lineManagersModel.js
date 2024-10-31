@@ -39,7 +39,7 @@ const lineManagerSchema = new mongoose.Schema({
         default: false
     }
 },{
-    timestamps: true  // automatically adds createdAt and updatedAt fields
+    timestamps: true 
 })
 
 export default mongoose.model('lineManagerModel', lineManagerSchema)

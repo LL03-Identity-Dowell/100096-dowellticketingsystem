@@ -1,4 +1,3 @@
-import { response } from 'express'
 import responseMessage from '../constant/responseMessage.js'
 import Ticket from '../models/ticketModel.js'
 import httpError from '../util/httpError.js'

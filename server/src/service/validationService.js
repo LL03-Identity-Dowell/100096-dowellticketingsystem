@@ -1,4 +1,4 @@
-import Joi from "joi";
+import Joi from 'joi'
 
 export const ticketValidationSchema = Joi.object({
     email: Joi.string().required(),
@@ -13,4 +13,17 @@ export const ticketValidationSchema = Joi.object({
     is_closed: Joi.boolean().required(),
     waiting_time: Joi.number().required(),
     document_id: Joi.string().required()
+})
+
+export const masterlinkValidationSchema = Joi.object({
+    link_id: Joi.string().optional(),
+    number_of_links: Joi.number().required(),
+    product_distribution: Joi.object().required(),
+    usernames: Joi.array().items(Joi.string()).required(),
+    is_active: Joi.boolean().required(),
+    link: Joi.string().optional(),
+    master_link: Joi.string().optional(),
+    workspace_id: Joi.string().required(),
+    available_links: Joi.number().required(),
+    api_key: Joi.string().required(),
 })

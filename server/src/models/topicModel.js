@@ -14,10 +14,8 @@ const topicSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
-    created_at: {
-        type: Date,
-        default: Date.now
-    }
+}, {
+    timestamps: true
 })
 
 module.exports = mongoose.model('topicModel', topicSchema)

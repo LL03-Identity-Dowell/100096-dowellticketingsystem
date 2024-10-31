@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import apiController from '../controller/apiController.js'
 import ticketController from '../controller/ticketController.js'
+import masterlinkController from '../controller/masterlinkController.js'
 
 const router = Router()
 
@@ -11,4 +12,7 @@ router.route('/health').get(apiController.health)
 router.route('/create-ticket').post(ticketController.createTicket)
 router.route('/delete-ticket/:id').delete(ticketController.deleteTicket)
 
-export default router 
+// Masterlink creation routes
+router.route('/generate-masterlink').post(masterlinkController.generateLink)
+
+export default router
