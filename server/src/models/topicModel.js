@@ -18,4 +18,4 @@ const topicSchema = new mongoose.Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model('topicModel', topicSchema)
+module.exports = mongoose.model('Topic', topicSchema)

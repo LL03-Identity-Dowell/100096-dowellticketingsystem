@@ -12,11 +12,7 @@ const generateLink = async (req, res) => {
         return httpError(req, res, 404, responseMessage.VALIDATION_ERROR, error.details[0].message)
     }
     const {workspace_id, api_key, number_of_links, product_distribution, usernames} = value;
-
     const existingLink = await Masterlink.findOne({api_key, workspace_id});
-
-
-
 if (existingLink){
     return httpError(req, res, 409, responseMessage.DUPLICATED_ENTRY)
 }

@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-import { v4 as uuidv4 } from 'uuid'
+import mongoose from 'mongoose';
+import { v4 as uuidv4 } from 'uuid';
 
 const masterlinkSchema = new mongoose.Schema(
     {
@@ -18,7 +18,6 @@ const masterlinkSchema = new mongoose.Schema(
             required: true,
             default: 0
         },
-
         product_distribution: {
             type: Object,
             required: true
@@ -37,14 +36,15 @@ const masterlinkSchema = new mongoose.Schema(
             required: true
         },
         workspace_id: {
-            type: String,
+            type: mongoose.Schema.Types.ObjectId, 
+            ref: 'Workspace',
             required: true
         },
         api_key: {
             type: String,
             required: true
         },
-        link: {
+        link: { 
             type: String,
             required: true
         }
@@ -52,6 +52,6 @@ const masterlinkSchema = new mongoose.Schema(
     {
         timestamps: true
     }
-)
+);
 
-export default mongoose.model('Masterlink', masterlinkSchema)
+export default mongoose.model('Masterlink', masterlinkSchema);

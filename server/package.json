@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon",
-    "start": "cross-env NODE_ENV=production node server/server.js"
+    "start": "cross-env NODE_ENV=production node server/server.js",
+    "start:ws": "cross-env NODE_ENV=production node src/websocketServer.js",
+    "dev:ws": "cross-env NODE_ENV=development nodemon src/websocketServer.js"
   },
   "keywords": [],
   "author": "",
