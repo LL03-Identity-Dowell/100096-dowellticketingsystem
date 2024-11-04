@@ -18,5 +18,9 @@ const topicSchema = new mongoose.Schema({
     timestamps: true
 })
 
+<<<<<<< HEAD
 // module.exports = mongoose.model('topicModel', topicSchema)
 export default mongoose.model('topicModel', topicSchema);
+=======
+module.exports = mongoose.model('Topic', topicSchema)
+>>>>>>> 0fa2cf305d438dc5d340b6d35cd0e64ff1b36df0

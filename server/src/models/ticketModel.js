@@ -21,15 +21,10 @@ const ticketSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        user_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-            required: true
-        },
-    
         public_id: {
             type: String,
-            unique: true
+            unique: true,
+            index: true 
         },
         product: {
             type: String,
@@ -39,11 +34,10 @@ const ticketSchema = new mongoose.Schema(
         display_name: {
             type: String
         },
-        line_manager: {
+        line_manager: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'lineManagerModel',
-            required: true
-        },
+            ref: 'lineManagerModel'
+        }],
         is_closed: {
             type: Boolean,
             required: true,
@@ -53,10 +47,10 @@ const ticketSchema = new mongoose.Schema(
             type: Number,
             default: 0
         },
-        document_id: {
+        documents: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Document'
-        }
+        }]
     },
     {
         timestamps: true 

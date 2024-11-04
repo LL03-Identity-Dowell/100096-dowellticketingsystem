@@ -11,7 +11,6 @@ router.route('/health').get(apiController.health)
 
 // Ticket CRUD routes
 router.route('/create-ticket').post(ticketController.createTicket)
-router.route('/delete-ticket/:id').delete(ticketController.deleteTicket)
 
 // Masterlink creation routes
 router.route('/generate-masterlink').post(masterlinkController.generateLink)

@@ -7,5 +7,6 @@ export default {
     CREATE_DATA: "Data created successfully",
     NOT_CREATE_DATA: "Error creating data",
     ALREADY_EXIST: (entity) => `${entity} already exist`,
-    DUPLICATED_ENTRY: "Sorry, data already existed"
+    DUPLICATED_ENTRY: "Sorry, data already existed",
+    NO_AVAILABLE_PUBLIC_IDS: "No available public ids"
 };
