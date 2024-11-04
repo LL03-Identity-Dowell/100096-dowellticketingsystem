@@ -27,3 +27,9 @@ export const masterlinkValidationSchema = Joi.object({
     available_links: Joi.number().required(),
     api_key: Joi.string().required(),
 })
+
+export const topicControllerValidation = Joi.object({
+    room_name: Joi.string().required(),
+    workspace_id: Joi.string().required(),
+    id: Joi.string().optional()
+})

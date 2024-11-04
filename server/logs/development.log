@@ -9416,3 +9416,1541 @@
         "SERVER_URL": "http://localhost:5000"
     }
 }
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:14:03.790Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:14:03.795Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:14:03.796Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:14:16.500Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:14:16.505Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:14:16.506Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:14:25.407Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:14:25.413Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:14:25.414Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:14:30.457Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:14:30.462Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:14:30.463Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:14:53.092Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:14:53.098Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:14:53.099Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:15:04.602Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:15:04.606Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:15:04.607Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:15:25.652Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:15:25.658Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:15:25.659Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:15:31.966Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:15:31.971Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:15:31.972Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:28:44.762Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:28:44.767Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:28:44.768Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:29:36.207Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:29:36.214Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:29:36.214Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:29:57.561Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:29:57.566Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:29:57.567Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:30:09.804Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:30:09.809Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:30:09.810Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T15:30:20.682Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T15:30:20.687Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T15:30:20.687Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-10-31T15:30:50.759Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "38.63 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "33.16 MB",
+                    "heapUsed": "29.96 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "2395.93 MB"
+            },
+            "timestamp": 1730388650759
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-10-31T15:31:33.938Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "81.81 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "32.66 MB",
+                    "heapUsed": "30.60 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "2462.25 MB"
+            },
+            "timestamp": 1730388693938
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-10-31T15:31:48.143Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/self"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-10-31T15:55:18.114Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/self"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-10-31T19:32:39.616Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "14547.48 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "36.91 MB",
+                    "heapUsed": "34.74 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "1503.75 MB"
+            },
+            "timestamp": 1730403159613
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T19:34:47.229Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T19:34:47.234Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T19:34:47.234Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T19:37:51.219Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T19:37:51.224Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T19:37:51.225Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T19:43:21.935Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T19:43:21.939Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T19:43:21.940Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-10-31T19:43:39.164Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "11.09 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "59.91 MB",
+                    "heapUsed": "32.68 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "1080.20 MB"
+            },
+            "timestamp": 1730403819163
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T19:43:40.878Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T19:43:40.881Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T19:43:40.882Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T19:47:18.895Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T19:47:18.899Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T19:47:18.900Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-10-31T20:00:34.822Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-10-31T20:00:34.826Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-10-31T20:00:34.827Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-10-31T20:07:39.007Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/api/v1/create-topic?room_name=sdvs&workspace_id=1341"
+        },
+        "message": "Data created successfully",
+        "data": {
+            "room_name": "new",
+            "workspace_id": "4a1d5d2b7f8e9c0a3b4c6d7e",
+            "_id": "6723e38aa8a4a4b20dee364e",
+            "id": "80d3ec53-bda8-46bf-9ac5-f0691c881504",
+            "createdAt": "2024-10-31T20:07:38.042Z",
+            "updatedAt": "2024-10-31T20:07:38.042Z",
+            "__v": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T19:59:55.789Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T19:59:55.796Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T19:59:55.797Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:00:45.629Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:00:45.634Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:00:45.635Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:03:39.610Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:03:39.617Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:03:39.618Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:04:26.228Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:04:26.233Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:04:26.234Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:06:21.424Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:06:21.429Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:06:21.429Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:09:33.933Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:09:33.938Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:09:33.939Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:09:48.252Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:09:48.257Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:09:48.258Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:11:06.939Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:11:06.944Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:11:06.945Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:14:10.124Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:14:10.127Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:14:10.128Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:15:13.695Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:15:13.699Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:15:13.700Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:16:55.529Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:16:55.535Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:16:55.536Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:18:18.979Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:18:18.983Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:18:18.984Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:19:51.273Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:19:51.279Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:19:51.280Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:20:22.545Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:20:22.549Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:20:22.550Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:20:52.505Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:20:52.509Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:20:52.510Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:21:14.052Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:21:14.057Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:21:14.058Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:22:13.990Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:22:13.994Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:22:13.994Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:23:04.362Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:23:04.366Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:23:04.367Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:23:36.414Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:23:36.417Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:23:36.418Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:31:25.093Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:31:25.097Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:31:25.098Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-01T20:31:39.972Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/api/v1/create-topic"
+        },
+        "message": "Data created successfully",
+        "data": {
+            "room_name": "joyweet",
+            "workspace_id": "4a1d5d2b7f8e9c0a3b4c6d7e",
+            "_id": "67253aab820d95dcd585970c",
+            "id": "20c11492-8886-4481-ba2d-3dd02c4d8173",
+            "createdAt": "2024-11-01T20:31:39.033Z",
+            "updatedAt": "2024-11-01T20:31:39.033Z",
+            "__v": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-01T20:32:30.656Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/api/v1/create-topic"
+        },
+        "message": "Data created successfully",
+        "data": {
+            "room_name": "eric",
+            "workspace_id": "1a2b3c4d5e6f7a8b9c0d1e2f",
+            "_id": "67253add820d95dcd5859710",
+            "id": "b273b268-ff69-45a4-9079-d84d4e477238",
+            "createdAt": "2024-11-01T20:32:29.446Z",
+            "updatedAt": "2024-11-01T20:32:29.446Z",
+            "__v": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-01T20:32:55.324Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/api/v1/create-topic"
+        },
+        "message": "Data created successfully",
+        "data": {
+            "room_name": "eric",
+            "workspace_id": "a9b8c7d6e5f4a3b2c1d0e9f8",
+            "_id": "67253af4820d95dcd5859713",
+            "id": "1d7a2662-92f0-483a-82f1-726e2a72e952",
+            "createdAt": "2024-11-01T20:32:52.297Z",
+            "updatedAt": "2024-11-01T20:32:52.297Z",
+            "__v": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:34:06.686Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:34:06.692Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:34:06.693Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:36:20.122Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:36:20.126Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:36:20.127Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:37:39.335Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:37:39.339Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:37:39.340Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:43:28.629Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:43:28.634Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:43:28.635Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:44:15.672Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:44:15.676Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:44:15.677Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T20:44:50.538Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T20:44:50.542Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T20:44:50.543Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-01T21:00:16.995Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/api/v1/create-topic"
+        },
+        "message": "Data created successfully",
+        "data": {
+            "room_name": "eric2",
+            "workspace_id": "deadbeefcafebabe12345678",
+            "_id": "67254160275da9d6d57f0f68",
+            "id": "c70624bf-b746-4f7f-bb1d-46d9cd7b0770",
+            "createdAt": "2024-11-01T21:00:16.036Z",
+            "updatedAt": "2024-11-01T21:00:16.036Z",
+            "__v": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-01T21:01:20.527Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "DELETE",
+            "url": "/api/v1//delete-topic/:id"
+        },
+        "message": "The operation has been successful",
+        "data": "Topic id 67254160275da9d6d57f0f68 has been deleted"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-01T21:01:45.188Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/api/v1/create-topic"
+        },
+        "message": "Data created successfully",
+        "data": {
+            "room_name": "eric2",
+            "workspace_id": "deadbeefcafebabe12345678",
+            "_id": "672541b8275da9d6d57f0f6d",
+            "id": "0363a416-dd15-4145-a7b1-7b770c55bcd3",
+            "createdAt": "2024-11-01T21:01:44.283Z",
+            "updatedAt": "2024-11-01T21:01:44.283Z",
+            "__v": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T21:02:08.960Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T21:02:08.965Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T21:02:08.966Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T21:02:33.480Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T21:02:33.486Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T21:02:33.487Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-01T21:02:41.841Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "DELETE",
+            "url": "/api/v1//delete-topic/:id"
+        },
+        "message": "The operation has been successful",
+        "data": "Topic id 672541b8275da9d6d57f0f6d has been deleted"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T21:03:36.645Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T21:03:36.650Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T21:03:36.651Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T21:04:17.278Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T21:04:17.289Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T21:04:17.290Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-01T21:04:58.031Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-01T21:04:58.035Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-01T21:04:58.036Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-01T21:06:05.605Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "POST",
+            "url": "/api/v1/create-topic"
+        },
+        "message": "Data created successfully",
+        "data": {
+            "room_name": "eric2",
+            "workspace_id": "deadbeefcafebabe12345678",
+            "_id": "672542bce5991809ddb7819d",
+            "id": "11a78028-37ec-4981-bf19-8bc69c4bd7a1",
+            "createdAt": "2024-11-01T21:06:04.626Z",
+            "updatedAt": "2024-11-01T21:06:04.626Z",
+            "__v": 0
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-01T21:06:13.981Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "DELETE",
+            "url": "/api/v1//delete-topic/:id"
+        },
+        "message": "The operation has been successful",
+        "data": "Topic id 672542bce5991809ddb7819d has been deleted"
+    }
+}

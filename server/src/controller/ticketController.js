@@ -47,9 +47,9 @@ const deleteTicket = async (req, res) => {
         console.error('Error deleting ticket:', error);
         return httpError(req, res, 500, responseMessage.SOMETHING_WENT_WRONG, error.message);
     }
-};
+}; 
 
-export default {
+export default { 
     createTicket,
-    deleteTicket,
+    deleteTicket,  
 }

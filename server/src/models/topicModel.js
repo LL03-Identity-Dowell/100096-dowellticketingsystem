@@ -1,10 +1,10 @@
 import mongoose from "mongoose"
-
+import { v4 as uuidv4 } from 'uuid'
 const topicSchema = new mongoose.Schema({
     id: {
         type: String,
         required: true,
-        default: uuid.v4()
+        default: uuidv4
     },
     room_name: {
         type: String,
@@ -18,4 +18,5 @@ const topicSchema = new mongoose.Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model('topicModel', topicSchema)
+// module.exports = mongoose.model('topicModel', topicSchema)
+export default mongoose.model('topicModel', topicSchema);
