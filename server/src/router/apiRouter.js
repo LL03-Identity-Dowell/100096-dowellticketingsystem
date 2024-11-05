@@ -15,3 +15,4 @@ router.route('/create-ticket').post(ticketController.createTicket)
 router.route('/generate-masterlink').post(masterlinkController.generateLink)
 
 export default router
+
