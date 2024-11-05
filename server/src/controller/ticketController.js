@@ -74,13 +74,13 @@ const createTicket = async (req, res) => {
     }
 }; 
 
-<<<<<<< HEAD
-export default { 
-    createTicket,
-    deleteTicket,  
-}
-=======
+
+// export default { 
+//     createTicket,
+//     deleteTicket,  
+// }
+
 export default {
     createTicket
 };
->>>>>>> 0fa2cf305d438dc5d340b6d35cd0e64ff1b36df0
+

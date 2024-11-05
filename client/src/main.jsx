@@ -1,13 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+import router from "./router.jsx";
+import { Provider } from "react-redux";
+import { store } from "./linemanage/Redux/store.js";
+import "./index.css";
+import "./App.css";
+import { CreateTicketProvider } from "./context/CreateTicketContext.jsx";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  // <React.StrictMode>
+  <CreateTicketProvider>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  </CreateTicketProvider>
+  //  </React.StrictMode>
+);

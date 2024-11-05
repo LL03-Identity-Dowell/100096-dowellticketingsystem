@@ -1,12 +1,11 @@
-import { Route, Routes } from 'react-router-dom';
-import Healthcheck from './Pages/ServerHealthStatus/ServerHealthStatus'
+import { Outlet } from "react-router-dom";
 
-const App = () => {
+const AppRouter = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Healthcheck />} />
-    </Routes>
+    <>
+      <Outlet />
+    </>
   );
 };
 
-export default App;
+export default AppRouter;

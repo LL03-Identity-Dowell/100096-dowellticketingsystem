@@ -17212,3 +17212,434 @@
 >>>>>>> 0fa2cf305d438dc5d340b6d35cd0e64ff1b36df0
     }
 }
+{
+    "level": "INFO",
+    "message": "DATABASE_CONNECTION",
+    "timestamp": "2024-11-04T10:35:57.024Z",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "message": "RATE_LIMITER_INITIATED",
+    "timestamp": "2024-11-04T10:35:57.029Z",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "message": "APPLICATION_STARTED",
+    "timestamp": "2024-11-04T10:35:57.030Z",
+    "meta": {
+        "PORT": "5000",
+        "SERVER_URL": "http://localhost:5000"
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T10:36:03.917Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/self"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T10:36:03.942Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "20.31 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "33.16 MB",
+                    "heapUsed": "29.80 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "2514.19 MB"
+            },
+            "timestamp": 1730716563942
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T10:36:03.953Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/self"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T10:36:03.958Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "20.32 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "33.41 MB",
+                    "heapUsed": "30.07 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "2509.54 MB"
+            },
+            "timestamp": 1730716563958
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:19:43.182Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "27845.92 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "34.66 MB",
+                    "heapUsed": "32.07 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "2175.37 MB"
+            },
+            "timestamp": 1730744383182
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:19:43.190Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/self"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:19:43.193Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "27845.93 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "34.66 MB",
+                    "heapUsed": "32.38 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "2175.71 MB"
+            },
+            "timestamp": 1730744383193
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:19:43.197Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/self"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:46:54.943Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "29477.68 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "34.91 MB",
+                    "heapUsed": "32.54 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "4263.07 MB"
+            },
+            "timestamp": 1730746014942
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:46:54.951Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/self"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:46:54.954Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "29477.69 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "35.41 MB",
+                    "heapUsed": "32.93 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "4248.94 MB"
+            },
+            "timestamp": 1730746014954
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:46:54.960Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/self"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:47:05.526Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "29488.26 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "35.41 MB",
+                    "heapUsed": "32.64 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "3780.94 MB"
+            },
+            "timestamp": 1730746025526
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:47:05.532Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/self"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:47:05.541Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/health"
+        },
+        "message": "The operation has been successful",
+        "data": {
+            "application": {
+                "environment": "development",
+                "uptime": "29488.28 Seconds",
+                "memoryUsage": {
+                    "heapTotal": "35.41 MB",
+                    "heapUsed": "32.81 MB"
+                }
+            },
+            "system": {
+                "cpuUsage": [
+                    0,
+                    0,
+                    0
+                ],
+                "totalMemory": "16075.33 MB",
+                "freeMemory": "3773.28 MB"
+            },
+            "timestamp": 1730746025541
+        }
+    }
+}
+{
+    "level": "INFO",
+    "message": "CONTROLLER_RESPONSE",
+    "timestamp": "2024-11-04T18:47:05.551Z",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/api/v1/self"
+        },
+        "message": "The operation has been successful",
+        "data": null
+    }
+}
