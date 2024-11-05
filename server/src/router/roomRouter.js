@@ -7,21 +7,21 @@ import {
     deleteRoom
 } from "../controller/roomController";  // Import the Room controller
 
-const router = express.Router();
+const roomRoutes = express.Router();
 
 // Route for creating a new room
-router.post("/rooms", createRoom);
+roomRoutes.post("/rooms", createRoom);
 
 // Route to get all rooms in a workspace
-router.get("/rooms/:workspace_id", getRooms);
+roomRoutes.get("/rooms/:workspace_id", getRooms);
 
 // Route to get a specific room by ID
-router.get("/rooms/:id", getRoomById);
+roomRoutes.get("/rooms/:id", getRoomById);
 
 // Route to update a room by ID
-router.put("/rooms/:id", updateRoom);
+roomRoutes.put("/rooms/:id", updateRoom);
 
 // Route to delete a room by ID
-router.delete("/rooms/:id", deleteRoom);
+roomRoutes.delete("/rooms/:id", deleteRoom);
 
-export default router;
+export default roomRoutes;

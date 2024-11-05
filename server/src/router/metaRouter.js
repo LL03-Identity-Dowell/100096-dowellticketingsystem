@@ -7,21 +7,21 @@ import {
     deleteMeta
 } from '../controller/metaController';  // Import the controllers
 
-const router = express.Router();
+const metaRoutes = express.Router();
 
 // Route to create a new Meta record
-router.post('/meta', createMeta);
+metaRoutes.post('/meta', createMeta);
 
 // Route to get all Meta records
-router.get('/meta', getAllMeta);
+metaRoutes.get('/meta', getAllMeta);
 
 // Route to get a single Meta record by ID
-router.get('/meta/:id', getMetaById);
+metaRoutes.get('/meta/:id', getMetaById);
 
 // Route to update a Meta record by ID
-router.put('/meta/:id', updateMeta);
+metaRoutes.put('/meta/:id', updateMeta);
 
 // Route to delete a Meta record by ID
-router.delete('/meta/:id', deleteMeta);
+metaRoutes.delete('/meta/:id', deleteMeta);
 
-export default router;
+export default metaRoutes;
