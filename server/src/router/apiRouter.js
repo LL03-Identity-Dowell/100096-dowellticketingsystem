@@ -2,30 +2,33 @@ import { Router } from 'express'
 import apiController from '../controller/apiController.js'
 import ticketController from '../controller/ticketController.js'
 import masterlinkController from '../controller/masterlinkController.js'
-import metaRoutes from './metaRoutes.js'; // Import the Meta routes
-import roomRoutes from './roomRouter.js';
-import topicRoutes from './topicRouter.js';
-import workspaceRoutes from './workspaceRouter.js';
-const router = Router()
+import metaRoutes from './metaRoutes.js';  // Import the Meta routes
+import roomRoutes from './roomRouter.js';  // Import the Room routes
+import topicRoutes from './topicRouter.js';  // Import the Topic routes
+import workspaceRoutes from './workspaceRouter.js';  // Import the Workspace routes
 
-router.route('/self').get(apiController.self)
-router.route('/health').get(apiController.health)
+const router = Router();
+
+// General API Routes
+router.route('/self').get(apiController.self);
+router.route('/health').get(apiController.health);
 
 // Ticket CRUD routes
-router.route('/create-ticket').post(ticketController.createTicket)
+router.route('/create-ticket').post(ticketController.createTicket);
 
 // Masterlink creation routes
-router.route('/generate-masterlink').post(masterlinkController.generateLink)
+router.route('/generate-masterlink').post(masterlinkController.generateLink);
 
 // Meta CRUD routes
-router.use('/', metaRoutes);
+router.use('/meta', metaRoutes); // Prefix '/meta' for meta routes
+
 // Room CRUD routes
-router.use('/', roomRoutes);
+router.use('/rooms', roomRoutes);  // Prefix '/rooms' for room routes
 
 // Topic CRUD routes
-router.use('/', topicRoutes);
+router.use('/topics', topicRoutes);  // Prefix '/topics' for topic routes
 
 // Workspace CRUD routes
-router.use('/', workspaceRoutes); 
-export default router
+router.use('/workspaces', workspaceRoutes);  // Prefix '/workspaces' for workspace routes
 
+export default router;

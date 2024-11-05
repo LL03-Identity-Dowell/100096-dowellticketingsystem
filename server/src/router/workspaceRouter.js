@@ -4,24 +4,24 @@ import * as workspaceController from '../controller/workspaceController';
 const workspaceRoutes = express.Router();
 
 // Create a new workspace
-workspaceRoutes.post('/workspaces', workspaceController.createWorkspace);
+workspaceRoutes.post('/', workspaceController.createWorkspace);  // POST /workspaces
 
 // Get all workspaces
-workspaceRoutes.get('/workspaces', workspaceController.getAllWorkspaces);
+workspaceRoutes.get('/', workspaceController.getAllWorkspaces);  // GET /workspaces
 
 // Get a workspace by ID
-workspaceRoutes.get('/workspaces/:id', workspaceController.getWorkspaceById);
+workspaceRoutes.get('/:id', workspaceController.getWorkspaceById);  // GET /workspaces/:id
 
 // Update a workspace by ID
-workspaceRoutes.put('/workspaces/:id', workspaceController.updateWorkspace);
+workspaceRoutes.put('/:id', workspaceController.updateWorkspace);  // PUT /workspaces/:id
 
 // Delete a workspace by ID
-workspaceRoutes.delete('/workspaces/:id', workspaceController.deleteWorkspace);
+workspaceRoutes.delete('/:id', workspaceController.deleteWorkspace);  // DELETE /workspaces/:id
 
 // Add a room to a workspace
-workspaceRoutes.post('/workspaces/:workspaceId/rooms', workspaceController.addRoomToWorkspace);
+workspaceRoutes.post('/:workspaceId/rooms', workspaceController.addRoomToWorkspace);  // POST /workspaces/:workspaceId/rooms
 
 // Get all rooms in a specific workspace
-workspaceRoutes.get('/workspaces/:workspaceId/rooms', workspaceController.getRoomsInWorkspace);
+workspaceRoutes.get('/:workspaceId/rooms', workspaceController.getRoomsInWorkspace);  // GET /workspaces/:workspaceId/rooms
 
 export default workspaceRoutes;

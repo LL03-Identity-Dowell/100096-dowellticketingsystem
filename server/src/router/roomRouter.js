@@ -10,18 +10,18 @@ import {
 const roomRoutes = express.Router();
 
 // Route for creating a new room
-roomRoutes.post("/rooms", createRoom);
+roomRoutes.post("/", createRoom);  // POST /rooms
 
-// Route to get all rooms in a workspace
-roomRoutes.get("/rooms/:workspace_id", getRooms);
+// Route to get all rooms in a workspace (we will use :workspace_id in the path)
+roomRoutes.get("/:workspace_id", getRooms);  // GET /rooms/:workspace_id
 
 // Route to get a specific room by ID
-roomRoutes.get("/rooms/:id", getRoomById);
+roomRoutes.get("/:id", getRoomById);  // GET /rooms/:id
 
 // Route to update a room by ID
-roomRoutes.put("/rooms/:id", updateRoom);
+roomRoutes.put("/:id", updateRoom);  // PUT /rooms/:id
 
 // Route to delete a room by ID
-roomRoutes.delete("/rooms/:id", deleteRoom);
+roomRoutes.delete("/:id", deleteRoom);  // DELETE /rooms/:id
 
 export default roomRoutes;

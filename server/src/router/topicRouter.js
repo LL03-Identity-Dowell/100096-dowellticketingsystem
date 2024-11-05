@@ -10,18 +10,18 @@ import {
 const topicRoutes = express.Router();
 
 // Route for creating a new topic
-topicRoutes.post("/topics", createTopic);
+topicRoutes.post("/", createTopic);
 
 // Route to get all topics in a workspace
-topicRoutes.get("/topics/:workspace_id", getTopics);
+topicRoutes.get("/:workspace_id", getTopics);
 
 // Route to get a specific topic by ID
-topicRoutes.get("/topics/:id", getTopicById);
+topicRoutes.get("/:id", getTopicById);
 
 // Route to update a topic by ID
-topicRoutes.put("/topics/:id", updateTopic);
+topicRoutes.put("/:id", updateTopic);
 
 // Route to delete a topic by ID
-topicRoutes.delete("/topics/:id", deleteTopic);
+topicRoutes.delete("/:id", deleteTopic);
 
 export default topicRoutes;
