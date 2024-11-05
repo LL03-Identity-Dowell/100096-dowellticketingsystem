@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import uuid from "uuid";  // Importing UUID package for manual UUID generation
+import { v4 as uuidv4 } from 'uuid';  // Correctly import the uuid module
 
 // Define the Room Schema
 const roomSchema = new mongoose.Schema({
@@ -7,7 +7,7 @@ const roomSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true, // Ensuring that the UUID is unique
-        default: () => uuid.v4()  // Automatically generating UUIDv4 for each room
+        default: uuidv4  // Correctly using uuid.v4() here
     },
     room_name: {
         type: String,

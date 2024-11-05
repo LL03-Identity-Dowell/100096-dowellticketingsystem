@@ -5,7 +5,7 @@ import {
     getRoomById,
     updateRoom,
     deleteRoom
-} from "../controllers/roomController";  // Import the Room controller
+} from "../controller/roomController";  // Import the Room controller
 
 const router = express.Router();
 
