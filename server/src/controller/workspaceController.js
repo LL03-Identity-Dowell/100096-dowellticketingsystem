@@ -1,5 +1,5 @@
-import Workspace from '../models/workspaceModel';  // Your Workspace model
-import Room from '../models/roomModel';  // Your Room model
+import Workspace from '../models/workspaceModel.js';  // Your Workspace model
+import Room from '../models/roomModel.js';  // Your Room model
 
 // Create a new workspace
 export const createWorkspace = async (req, res) => {

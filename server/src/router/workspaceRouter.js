@@ -1,5 +1,5 @@
 import express from 'express';
-import * as workspaceController from '../controller/workspaceController';
+import * as workspaceController from '../controller/workspaceController.js';
 
 const workspaceRoutes = express.Router();
 

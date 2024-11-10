@@ -1,4 +1,4 @@
-import Meta from "../models/metaModel"; // Import the Meta model
+import Meta from "../models/metaModel.js"; // Import the Meta model
 
 // Create a new Meta record
 export const createMeta = async (req, res) => {

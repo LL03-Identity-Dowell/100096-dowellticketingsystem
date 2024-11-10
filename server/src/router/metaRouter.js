@@ -5,7 +5,7 @@ import {
     getMetaById,
     updateMeta,
     deleteMeta
-} from '../controller/metaController';  // Import the controllers
+} from '../controller/metaController.js';  // Import the controllers
 
 const metaRoutes = express.Router();
 

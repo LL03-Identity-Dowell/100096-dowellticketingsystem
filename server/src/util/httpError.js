@@ -1,6 +1,7 @@
 import errorObject from './errorObject.js';
 
-export default (req, res, errorStatusCode = 500, message = null, errorDetails = null) => {
+// export default (req, res, errorStatusCode = 500, message = null, errorDetails = null) => {
+export default (next, req, errorStatusCode = 500, message = null, errorDetails = null) => {
     const error = new Error(message || 'An unexpected error occurred');
     const errorObj = errorObject(error, req, errorStatusCode);
 
@@ -12,5 +13,6 @@ export default (req, res, errorStatusCode = 500, message = null, errorDetails = 
         errorObj.trace = { error: errorDetails };
     }
 
-    res.status(errorStatusCode).json(errorObj);
+    // res.status(errorStatusCode).json(errorObj);
+    next(errorObj);
 };

@@ -1,5 +1,5 @@
-import Room from "../models/roomModel";
-import Workspace from "../models/workspaceModel";  // Assuming Workspace model is in models/Workspace
+import Room from "../models/roomModel.js";
+import Workspace from "../models/workspaceModel.js";  // Assuming Workspace model is in models/Workspace
 
 // Create a new room
 export const createRoom = async (req, res) => {

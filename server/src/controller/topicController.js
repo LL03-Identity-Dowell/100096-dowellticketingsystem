@@ -1,6 +1,6 @@
-import Topic from "../models/topicModel";  // Assuming the Topic model is in models/Topic
-import Workspace from "../models/workspaceModel";  // Assuming the Workspace model is in models/Workspace
-import Room from "../models/roomModel";  // Assuming the Room model is in models/Room
+import Topic from "../models/topicModel.js";  // Assuming the Topic model is in models/Topic
+import Workspace from "../models/workspaceModel.js";  // Assuming the Workspace model is in models/Workspace
+import Room from "../models/roomModel.js";  // Assuming the Room model is in models/Room
 
 // Create a new topic
 export const createTopic = async (req, res) => {

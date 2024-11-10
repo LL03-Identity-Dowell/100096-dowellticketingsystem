@@ -2,11 +2,11 @@ import { Router } from 'express'
 import apiController from '../controller/apiController.js'
 import ticketController from '../controller/ticketController.js'
 import masterlinkController from '../controller/masterlinkController.js'
-import metaRoutes from './metaRoutes.js';  // Import the Meta routes
+import metaRoutes from './metaRouter.js';  // Import the Meta routes
 import roomRoutes from './roomRouter.js';  // Import the Room routes
 import topicRoutes from './topicRouter.js';  // Import the Topic routes
 import workspaceRoutes from './workspaceRouter.js';  // Import the Workspace routes
-
+import lineRouters from './lineManagerRouter.js';
 const router = Router();
 
 // General API Routes
@@ -18,7 +18,8 @@ router.route('/create-ticket').post(ticketController.createTicket);
 
 // Masterlink creation routes
 router.route('/generate-masterlink').post(masterlinkController.generateLink);
-
+// Meta CRUD routes
+router.use('/meta', metaRoutes); // Prefix '/meta' for meta routes
 // Meta CRUD routes
 router.use('/meta', metaRoutes); // Prefix '/meta' for meta routes
 
@@ -30,5 +31,7 @@ router.use('/topics', topicRoutes);  // Prefix '/topics' for topic routes
 
 // Workspace CRUD routes
 router.use('/workspaces', workspaceRoutes);  // Prefix '/workspaces' for workspace routes
+// LineManager CRUD routes
+router.use('/lineManagers', lineRouters);  // Prefix '/workspaces' for workspace routes
 
 export default router;
