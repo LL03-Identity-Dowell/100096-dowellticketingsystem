@@ -1,5 +1,3 @@
-// import startConsumer from "./kafka-consumer.js";
-// await startConsumer().catch(console.error);
 // const { Kafka } = require('kafkajs');
 // const { DatacubeApiClient } = require('./Datacube.js');
 import { Kafka } from 'kafkajs';
@@ -11,27 +9,22 @@ async function startConsumer() {
         brokers: ['kafka:9092']
     });
 
-    const consumer = kafka.consumer({ groupId: 'group1' });
+    const consumer = kafka.consumer({ groupId: 'group1', sessionTimeout: 30000, });
     await consumer.connect();
-    await consumer.subscribe({ topic: 'test-topic', fromBeginning: true });
+    await consumer.subscribe({ topic: 'test-topic', fromBeginning: true, config: { 'auto.offset.reset': 'earliest' } });
 
     // Instantiate the MongoApiClient with your API's base URL
     const datacubeClient = new DatacubeApiClient('https://datacube.uxlivinglab.online/'); // Update with actual base URL
 
     await consumer.run({
         eachMessage: async ({ topic, partition, message }) => {
-            // const msg = JSON.parse(message.value.toString());
-            // console.log(`Received message: ${JSON.stringify(msg)}`);
+
 
             try {
                 const rawMessage = message.value.toString();
                 const msg = JSON.parse(rawMessage);
                 console.log(`Raw message received: ${rawMessage}`);
-                console.log(`Raw message received keys: ${Object.keys(message)}`);
-                console.log(`Raw value received: ${message.value}`);
-                console.log(`Raw value.action received: ${message.value.action}`);
-                console.log(`Raw action received: ${message.action}`);
-                console.log(`Received msg.action : ${msg.action}`);
+                console.log(`Received message: ${JSON.stringify(msg)}`);
                 let response;
                 const { action, dbName, collName, ...params } = msg;
 
@@ -69,7 +62,7 @@ async function startConsumer() {
     console.log("Consumer successfully started");
 }
 
-startConsumer().catch(console.error);
+// startConsumer().catch(console.error);
 // module.exports = startConsumer;
 
-// export default startConsumer
+export default startConsumer

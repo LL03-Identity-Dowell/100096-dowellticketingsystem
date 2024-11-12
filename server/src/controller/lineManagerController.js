@@ -2,6 +2,8 @@ import Joi from 'joi';
 import LineManager from '../models/lineManagerModel.js';
 import { lineManagerValidationSchema } from '../service/validationService.js'
 import createProducer from './kafka-producer.cjs';
+// Initialize the producer outside the controller functions
+const producer = await createProducer();
 const create = async (req, res) => {
 
     const { error } = lineManagerValidationSchema.validate(req.body);
@@ -23,10 +25,28 @@ const create = async (req, res) => {
 
         const lineManagerData = new LineManager(req.body);
         const newLineManager = await lineManagerData.save();
+        // Send Kafka message as a callback after creating a new line manager
+        await producer.send({
+            topic: 'test-topic',
+            messages: [
+                {
+                    value: JSON.stringify({
+                        action: 'insert',
+                        dbName: 'db1_workspace_id',
+                        collName: 'line_manager',
+                        data: req.body
+                    })
+                },
+            ]
+        });
+
         res.status(201).json({
             message: 'Linemanager created successfully',
             data: newLineManager,
         });
+        // success: true,
+        //     2024 - 11 - 11 23: 46: 37   message: 'Data inserted successfully!',
+        //         2024 - 11 - 11 23: 46: 37   data: { inserted_id: '67326d2df8348a1e7f3c98b9' }
     } catch (error) {
         console.error('Error creating linemanager:', error);
         res.status(500).json({
@@ -53,6 +73,20 @@ const update = async (req, res) => {
                 message: 'Linemanager not found',
             });
         }
+        await producer.send({
+            topic: 'test-topic',
+            messages: [
+                {
+                    value: JSON.stringify({
+                        action: 'update',
+                        dbName: 'db1_workspace_id',
+                        collName: 'line_manager',
+                        data: req.body
+                    })
+                },
+            ]
+        });
+
         res.status(200).json({
             message: 'Linemanager updated successfully',
             data: updatedLineManager,
@@ -69,12 +103,25 @@ const read = async (req, res) => {
     console.log("Getting in the read already");
     try {
         const producer = await createProducer();
+        const mess = {
+            action: "VeryUnknown",
+            dbName: "example_db",
+            collName: "example_collection",
+            data: {
+                field1: "value1",
+                field2: "value2"
+            }
+        }
         // Send a test message to Kafka
         await producer.send({
             topic: 'test-topic',
             messages: [
-                { value: 'Hello from the server!' }
+                {
+                    value: JSON.stringify(mess)
+                },
             ]
+
+
         });
         console.log('Message sent from server to Kafka');
     } catch (error) {

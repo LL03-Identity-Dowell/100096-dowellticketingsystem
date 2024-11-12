@@ -86,6 +86,7 @@ services:
             - kafka
         networks:
             - queue-net
+        restart: on-failure
 
 networks:
     queue-net:
