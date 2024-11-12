@@ -14,7 +14,10 @@ router.route('/self').get(apiController.self);
 router.route('/health').get(apiController.health);
 
 // Ticket CRUD routes
-router.route('/create-ticket').post(ticketController.createTicket);
+router.route('/create-ticket').post(ticketController.createTicket)
+router.route('/tickets').get(ticketController.getAllTickets)           
+router.route('/tickets/:id').get(ticketController.getTicketById)     
+router.route('/tickets/:id/close').put(ticketController.closeTicket)   
 
 // Masterlink creation routes
 router.route('/generate-masterlink').post(masterlinkController.generateLink);
