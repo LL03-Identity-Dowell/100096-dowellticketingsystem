@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Defining the CSS variables globally */
+:root {
+    --background-color: #22C55E;
+    --transparent-background-color: rgba(34, 197, 94, 0.09); /* Use rgba for transparency */
+    --title-color: #22C55E;
+    --primary-text-color: white;
+    --secondary-text-color: black;
+}
+
+/* Using the variable and overriding Material UI AppBar color */
+.MuiAppBar-colorPrimary {
+    background-color: var(--transparent-background-color) !important;
+}
+.MuiSvgIcon-root {
+    color: var(--background-color);
+}
+.title-text{
+    font-family: Inter;
+    font-size: 26.75px;
+    font-weight: 600;
+    line-height: 32.37px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: var(--title-color);
+}
+.icon {
+    color: var(--title-color);
+}
+.head{
+    background-color: var(--background-color) !important;
+}
+
