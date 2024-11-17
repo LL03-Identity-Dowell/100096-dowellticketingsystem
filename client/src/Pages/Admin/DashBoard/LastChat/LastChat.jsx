@@ -1,6 +1,6 @@
 import { Grid, Typography, Box } from '@mui/material';
-import Button from '../../../components/Button/Button';
-import CheckBox from '../../../components/CheckBox';
+import Button from '@/components/Button/Button';
+import CheckBox from '@/components/CheckBox';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import LevelSelector from './LevelSelector';
 import ChatUI from './ChatUI';
@@ -33,7 +33,7 @@ export default function LastChat() {
             <Box className='box-container' >
               <Box className="box" style={{ display: 'flex', alignItems: 'center' }}>
                 {/* ArrowBack Icon */}
-                <ArrowBackOutlinedIcon onClick={handleGoBack} style={{ cursor: 'pointer', color:'white', marginRight: '18px' }} />
+                <ArrowBackOutlinedIcon onClick={handleGoBack} />
                 
                 {/* Typography for the name */}
                 <Typography variant="h6" gutterBottom>

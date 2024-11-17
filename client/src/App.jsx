@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AuthRoutes from './routes/AuthRoutes';        // Import auth routes
 import NonAuthRoutes from './routes/NonAuthRoutes';  // Import non-auth routes
 import PrivateRoute from './routes/PrivateRoute';
+import PageNotFound from './Pages/PageNotFound';  // Import the PageNotFound component
+
 const App = () => {
   return (
     <Router> 
@@ -23,6 +25,8 @@ const App = () => {
             //element={<PrivateRoute >{route.element}</PrivateRoute>} 
           />
         ))}
+        {/* Handle any unmatched route with a 404 Page Not Found */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   );

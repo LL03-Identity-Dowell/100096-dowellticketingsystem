@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';  // Import PropTypes for prop validation
-import Header from '../../components/Header'; // Importing the Header component
-import { Container, Grid, Typography, Box, Card, CardContent, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Button } from "@mui/material";
+import Header from '@/components/Header'; // Importing the Header component
+import { Container, Grid, Typography, Box, Card, CardContent, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
 import {
     AccountCircleOutlined as AccountCircle,
     NotificationsActiveOutlined as NotificationsIcon,
     MailOutlined as MailIcon,
 } from '@mui/icons-material';
-import IconBreadcrumbs from '../../components/BreadCrumbs';
+import IconBreadcrumbs from '@/components/BreadCrumbs';
 import HomeIcon from '@mui/icons-material/Home';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import GrainIcon from '@mui/icons-material/Grain';
-import SearchBar from '../../components/SearchBar';
+import SearchBar from '@/components/SearchBar';
 import ChatList from './ChatList';
 import LastChat from './LastChat/LastChat';
+import Footer from '@/components/shared/Footer';
 // Reusable StatCard component to display each stat in a card
 function StatCard({ title, value, icon: Icon }) {
   return (
@@ -42,8 +43,8 @@ export default function DashBoard() {
   // Sample data for breadcrumbs
   const breadcrumbItems = [
     { label: 'Home', href: '/', icon: <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" /> },
-    { label: 'Admin', href: '/material-ui/getting-started/installation/', icon: <WhatshotIcon sx={{ mr: 0.5 }} fontSize="inherit" /> },
-    { label: 'DashBoard', href: '#', icon: <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" /> },
+    { label: 'Admin', href: '/admin', icon: <WhatshotIcon sx={{ mr: 0.5 }} fontSize="inherit" /> },
+    { label: 'DashBoard', href: '/admin/dashboard', icon: <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" /> },
   ];
 
   // Sample data for the table
@@ -72,7 +73,7 @@ export default function DashBoard() {
             </Box>
         </Box>
         <Typography variant="h5" gutterBottom>
-          Dashboard Overview
+          
         </Typography>
 
         <Grid container spacing={3}>
@@ -107,9 +108,9 @@ export default function DashBoard() {
           {/* Table Section */}
           <Grid item xs={12} md={8}>
             <Typography variant="h6" gutterBottom>
-              Users Table
+              Line Managers
             </Typography>
-            <TableContainer>
+            <TableContainer className='topic-container'>
               <Table>
                 <TableHead className='head'>
                   <TableRow>
@@ -141,6 +142,7 @@ export default function DashBoard() {
         {/* Summary Section */}
         {<LastChat />}
       </Container>
+      <Footer /> {/* This renders the Header component */}
     </>
   );
 }

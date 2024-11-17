@@ -23,7 +23,7 @@ export default function CheckBox({ isChecked, onChange, disabled}) {
       aria-checked={checked}
       style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
     >
-      {<CheckIcon />}{/*   checked && <CheckIcon /> */}
+        {checked && <CheckIcon />}
     </span>
   );
 }

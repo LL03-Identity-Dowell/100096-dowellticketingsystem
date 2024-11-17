@@ -4,8 +4,8 @@ import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import Avatar from '@mui/material/Avatar';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import EmojiButton from '../../../components/Button/EmojiButton';
-import emojis from '../../../utils/emojilist';
+import EmojiButton from '@/components/Button/EmojiButton';
+import emojis from '@/utils/emojilist';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 
 const ChatUI = () => {

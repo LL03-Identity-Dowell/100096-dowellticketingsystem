@@ -1,4 +1,3 @@
-import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
 
 export default function ChatList() {
@@ -46,7 +45,7 @@ export default function ChatList() {
         </Typography>
       </Box>
 
-      <Box className='box-container' >
+      <Box className='topic-container' >
         <Typography variant="h6" gutterBottom>
           <div className='topicitem'>
             <span style={{ fontSize: '0.875rem', fontWeight: 'bold', flex: 1 }}>Topic:</span>

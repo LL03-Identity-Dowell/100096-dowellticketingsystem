@@ -14,10 +14,12 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import logo from '../assets/logo.png';
 import { Avatar, Tooltip } from '@mui/material';
+import { useNavigate, useLocation  } from 'react-router-dom';
 
 
 export default function Header() {
-
+  const navigate =useNavigate();
+  const location = useLocation();  // Use useLocation to get the current URL
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -36,6 +38,7 @@ export default function Header() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -60,10 +63,40 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Settings</MenuItem>
-      <MenuItem onClick={handleMenuClose}>View Manager</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Log Out</MenuItem>
+      {/* Profile menu item */}
+      {!location.pathname.includes('/admin/profile') && (
+        <MenuItem onClick={() => { navigate('/admin/profile'); handleMenuClose(); }}>
+          Profile
+        </MenuItem>
+      )}
+
+      {/* Settings menu item */}
+      {!location.pathname.includes('/admin/settings') && (
+        <MenuItem onClick={() => { navigate('/admin/settings'); handleMenuClose(); }}>
+          Settings
+        </MenuItem>
+      )}
+
+      {/* View Manager menu item */}
+      {!location.pathname.includes('/admin/linemanager') && (
+        <MenuItem onClick={() => { navigate('/admin/linemanager'); handleMenuClose(); }}>
+          View Manager
+        </MenuItem>
+      )}
+
+      {/* Dashboard menu item */}
+      {!location.pathname.includes('/admin/dashboard') && (
+        <MenuItem onClick={() => { navigate('/admin/dashboard'); handleMenuClose(); }}>
+          DashBoard
+        </MenuItem>
+      )}
+
+      {/* Log Out menu item */}
+      {!location.pathname.includes('/admin/logout') && (
+        <MenuItem onClick={() => { navigate('/admin/logout'); handleMenuClose(); }}>
+          Log Out
+        </MenuItem>
+      )}
     </Menu>
   );
 

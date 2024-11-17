@@ -1,7 +1,7 @@
 
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link';
+import {Link }from 'react-router-dom';
 import PropTypes from 'prop-types';  // Import PropTypes for prop validation
 function handleClick(event) {
   event.preventDefault();
@@ -20,7 +20,7 @@ export default function IconBreadcrumbs({Items}) {
               underline="hover"
               sx={{ display: 'flex', alignItems: 'center' }}
               color="inherit"
-              href={item.href}
+              to={item.href}
             >
               {item.icon}
               {item.label}
