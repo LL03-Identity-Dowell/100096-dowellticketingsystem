@@ -88,7 +88,7 @@ Ensure that Docker is running on your machine.
 Launch the project by running:
 
 ```bash
-./runservices.sh
+docker-compose -f docker-compose.dev.yml up --build -d./runservices.sh
 ```
 
 ### 9. Clean Up Docker Environment
@@ -96,7 +96,7 @@ Launch the project by running:
 To remove all Docker containers, images, volumes, and builds related to the project, execute the cleanup script:
 
 ```bash
-./removeservices.sh
+docker-compose -f docker-compose.dev.yml down -v
 ```
 
 **Note**: This will remove all Docker services and data associated with the project. Ensure that no other critical services are running in Docker before running this command.
