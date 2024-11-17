@@ -1,16 +1,28 @@
 // App.jsx
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import CreateTicket from './Pages/Client/Ticket/CreateTicket';
-import Queuing from './Pages/Client/Ticket/Queuing';
-import Forms from './Pages/Linemanager/Forms';
-
+import AuthRoutes from './routes/AuthRoutes';        // Import auth routes
+import NonAuthRoutes from './routes/NonAuthRoutes';  // Import non-auth routes
+import PrivateRoute from './routes/PrivateRoute';
 const App = () => {
   return (
     <Router> 
       <Routes>
-        <Route path="/" element={<CreateTicket />} />
-        <Route path="/queuing/:id" element={<Queuing/>} />
-        <Route path="/linemanager" element={<Forms />} />
+      
+        {/* Call Non-Auth Routes for login, register, etc */}
+        {NonAuthRoutes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
+
+        {/* Call Auth Routes for profile, settings, etc */}
+        
+        {AuthRoutes.map((route, index) => (
+          <Route 
+            key={index}
+            path={route.path} 
+            element={route.element}
+            //element={<PrivateRoute >{route.element}</PrivateRoute>} 
+          />
+        ))}
       </Routes>
     </Router>
   );
