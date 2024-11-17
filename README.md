@@ -88,7 +88,7 @@ Ensure that Docker is running on your machine.
 Launch the project by running:
 
 ```bash
-docker-compose -f docker-compose.dev.yml up --build -d./runservices.sh
+docker-compose -f docker-compose.dev.yml up --build -d
 ```
 
 ### 9. Clean Up Docker Environment
