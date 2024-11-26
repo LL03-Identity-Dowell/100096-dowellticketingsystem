@@ -13,10 +13,6 @@ const lineManagerSchema = new mongoose.Schema(
                 ref: 'Ticket'
             }
         ],
-        department: {
-            type: String,
-            required: true
-        },
         positions_in_a_line: Number,
         average_serving_time: Number,
         ticket_count: {
