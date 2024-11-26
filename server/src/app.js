@@ -1,27 +1,33 @@
-import express from 'express';
-import router from './router/apiRouter.js';
-import globalErrorHandler from './middleware/globalErrorHandler.js';
-import responseMessage from './constant/responseMessage.js';
-import httpError from './util/httpError.js';
-import helmet from 'helmet';
-import cors from 'cors';
+import express from 'express'
+import router from './router/apiRouter.js'
+import globalErrorHandler from './middleware/globalErrorHandler.js'
+import responseMessage from './constant/responseMessage.js'
+import httpError from './util/httpError.js'
+import helmet from 'helmet'
+import cors from 'cors'
 
-const app = express();
+const app = express()
 
-app.use(helmet());
-app.use(cors());
-app.use(express.json());
+app.use(helmet())
+app.use(
+    cors({
+        origin: true, // Allow all origins
+        methods: ['GET', 'POST', 'PUT', 'DELETE'], // Define allowed methods
+        credentials: true // Allow cookies
+    })
+)
+app.use(express.json())
 
-app.use('/api/v1', router);
+app.use('/api/v1', router)
 
-app.use((req, res, next) => {
+app.use((req, next) => {
     try {
-        throw new Error(responseMessage.NOT_FOUND('route'));
+        throw new Error(responseMessage.NOT_FOUND('route'))
     } catch (err) {
-        httpError(next, err, req, 404);
+        httpError(next, err, req, 404)
     }
-});
+})
 
-app.use(globalErrorHandler);
+app.use(globalErrorHandler)
 
-export default app;
+export default app

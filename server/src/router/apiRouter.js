@@ -22,10 +22,9 @@ router.route('/tickets/:id/close').put(ticketController.closeTicket)
 // Masterlink creation routes
 router.route('/generate-masterlink').post(masterlinkController.generateLink);
 // Meta CRUD routes
-router.use('/meta', metaRoutes); // Prefix '/meta' for meta routes
+router.use('/meta', metaRoutes); 
 // Meta CRUD routes
-router.use('/meta', metaRoutes); // Prefix '/meta' for meta routes
-
+router.use('/meta', metaRoutes); 
 // Room CRUD routes
 router.use('/rooms', roomRoutes);  // Prefix '/rooms' for room routes
 
