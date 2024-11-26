@@ -14,7 +14,7 @@ Welcome to the **Project Initialization Kit**, a streamlined setup template for 
 
 ## Getting Started
 
-Follow these steps to set up your project quickly:
+Follow these steps to set up your project quickly
 
 ### 1. Clone the Repository
 
