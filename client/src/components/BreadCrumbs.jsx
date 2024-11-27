@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import {Link }from 'react-router-dom';
 import PropTypes from 'prop-types';  // Import PropTypes for prop validation
+
 function handleClick(event) {
   event.preventDefault();
   console.info('You clicked a breadcrumb.');

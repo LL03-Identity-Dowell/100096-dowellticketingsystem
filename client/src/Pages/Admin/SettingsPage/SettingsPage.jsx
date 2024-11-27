@@ -7,6 +7,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import GrainIcon from '@mui/icons-material/Grain';
 import IconBreadcrumbs from "@/components/BreadCrumbs";
+
 const SettingsPage = () => {
   const breadcrumbItems = [
     { label: 'Home', href: '/', icon: <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" /> },

@@ -80,7 +80,7 @@ export default function DashBoard() {
           {/* Stat Cards Grid */}
           <Grid item xs={12} sm={6} md={4}>
             <StatCard
-              title="Total Users"
+              title="Line Managers"
               value="1,245"
               icon={AccountCircle}  // You can use any Material Icon
             />
@@ -88,7 +88,7 @@ export default function DashBoard() {
 
           <Grid item xs={12} sm={6} md={4}>
             <StatCard
-              title="Active Sessions"
+              title="Active Tickets"
               value="56"
               icon={NotificationsIcon}  // You can use any Material Icon
             />
