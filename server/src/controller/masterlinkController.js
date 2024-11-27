@@ -11,13 +11,16 @@ const generateLink = async (req, res) => {
     if (error) {
         return httpError(req, res, 404, responseMessage.VALIDATION_ERROR, error.details[0].message)
     }
-    const {workspace_id, api_key, number_of_links, product_distribution, usernames} = value;
-    const existingLink = await Masterlink.findOne({api_key, workspace_id});
-if (existingLink){
-    return httpError(req, res, 409, responseMessage.DUPLICATED_ENTRY)
-}
+    const { workspace_id, api_key, number_of_links, product_distribution, usernames } = value;
+    const existingLink = await Masterlink.findOne({ api_key, workspace_id });
+    if (existingLink) {
+        // return httpError(req, res, 409, responseMessage.DUPLICATED_ENTRY)
+        return res.status(409).json({
+            message: 'The link already exists',
+        });
+    }
 
-const link_id = uuidv4()
+    const link_id = uuidv4()
 
     const baseUrl = 'https://www.dowellchat.uxlivinglab.online/'
     const master_link = `${baseUrl}api/share/?link_id=${link_id}`

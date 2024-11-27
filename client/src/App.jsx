@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AuthRoutes from './routes/AuthRoutes';        // Import auth routes
 import NonAuthRoutes from './routes/NonAuthRoutes';  // Import non-auth routes
-import PrivateRoute from './routes/PrivateRoute';
+// import PrivateRoute from './routes/PrivateRoute';
 import PageNotFound from './Pages/PageNotFound';  // Import the PageNotFound component
 
 const App = () => {

@@ -36,14 +36,13 @@ export const topicControllerValidation = Joi.object({
 })
 
 export const lineManagerValidationSchema = Joi.object({
-    user_id: Joi.string().required(),
-    ticket_ids: Joi.array().items(
-        Joi.string().custom((value, helper) => (mongoose.Types.ObjectId.isValid(value) ? value : helper.message('Invalid ticket_id format')))
-    ),
-    department: Joi.string().required(),
-    positions_in_a_line: Joi.number().optional(),
-    average_serving_time: Joi.number().optional(),
-    ticket_count: Joi.number().default(0),
+
+    user_id: Joi.string().required().regex(/^[0-9a-fA-F]{24}$/),  // Validates as a MongoDB ObjectId
+    ticket_ids: Joi.array().items(Joi.string().regex(/^[0-9a-fA-F]{24}$/)),  // Array of ObjectId strings
+    // department: Joi.string().required(),
+    positions_in_a_line: Joi.number().integer(),  // Assuming it should be an integer
+    average_serving_time: Joi.number(),  // Allows float or integer
+    ticket_count: Joi.number().integer().default(0),
     is_active: Joi.boolean().default(true),
     workspace: Joi.string().required()
 })

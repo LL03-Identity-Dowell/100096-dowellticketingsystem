@@ -1,4 +1,4 @@
-import TicketSelect from '@/components/client/ticketSelect';
+import TicketSelect from '@/components/client/TicketSelect';
 import logo from '../../../assets/logo2.png';
 import {products, supportDepartment} from '@/constants/data';
 import {useState} from 'react';

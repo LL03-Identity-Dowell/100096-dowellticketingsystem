@@ -7,6 +7,7 @@ import IconBreadcrumbs from '@/components/BreadCrumbs';
 import HomeIcon from '@mui/icons-material/Home';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import GrainIcon from '@mui/icons-material/Grain';
+
 const ProfilePage = () => {
   // Sample data for breadcrumbs
   const breadcrumbItems = [
