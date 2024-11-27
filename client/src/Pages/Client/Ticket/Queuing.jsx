@@ -4,21 +4,20 @@ import { useState, useEffect } from 'react';
 const Queuing = () => {
   const { id } = useParams();
   const position = 4;
-  const waiting_time = 30; // in minutes
+  const waiting_time = 30; 
 
-  // State for the countdown timer
-  const [remainingTime, setRemainingTime] = useState(waiting_time * 60); // Convert minutes to seconds
+  const [remainingTime, setRemainingTime] = useState(waiting_time * 60); 
 
   useEffect(() => {
     const timer = setInterval(() => {
       setRemainingTime((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
 
-    // Cleanup interval on component unmount
+
     return () => clearInterval(timer);
   }, []);
 
-  // Format time in MM:SS format
+
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
