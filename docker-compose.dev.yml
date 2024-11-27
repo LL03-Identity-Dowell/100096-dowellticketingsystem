@@ -52,6 +52,7 @@ services:
             - queue-net
 
     zookeeper:
+        
         container_name: zookeeper
         image: confluentinc/cp-zookeeper:latest
         environment:
@@ -59,6 +60,7 @@ services:
             ZOOKEEPER_TICK_TIME: 2000
         ports:
             - '2181:2181'
+        restart: always
         networks:
             - queue-net
 
@@ -76,6 +78,7 @@ services:
             KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
         ports:
             - '9092:9092'
+        restart: always
         networks:
             - queue-net
     kafka-consumer:

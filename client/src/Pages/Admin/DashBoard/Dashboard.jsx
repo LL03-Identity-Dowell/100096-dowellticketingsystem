@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';  // Import PropTypes for prop validation
 import Header from '@/components/Header'; // Importing the Header component
-import { Container, Grid, Typography, Box, Card, CardContent, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material';
+
+import { Container, Grid, Typography, Box, Card, CardContent, Table,TablePagination, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
 import {
     AccountCircleOutlined as AccountCircle,
     NotificationsActiveOutlined as NotificationsIcon,
@@ -14,6 +15,10 @@ import SearchBar from '@/components/SearchBar';
 import ChatList from './ChatList';
 import LastChat from './LastChat/LastChat';
 import Footer from '@/components/shared/Footer';
+import  { useEffect, useState } from 'react';
+import { getAllLineManagers, getAllTickets } from '@/services/api.services';
+
+
 // Reusable StatCard component to display each stat in a card
 function StatCard({ title, value, icon: Icon }) {
   return (
@@ -47,12 +52,56 @@ export default function DashBoard() {
     { label: 'DashBoard', href: '/admin/dashboard', icon: <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" /> },
   ];
 
-  // Sample data for the table
-  const tableData = [
-    { name: 'John Doe', email: 'john@example.com', role: 'Admin' },
-    { name: 'Jane Smith', email: 'jane@example.com', role: 'User' },
-    { name: 'Michael Brown', email: 'michael@example.com', role: 'Editor' },
-  ];
+  const [tableData, setTableData] = useState([]);
+  const [tableloading, setTableLoading] = useState(true);
+  const [tableerror, setTableError] = useState(null);
+  const [ticketsData, setTicketsData] = useState([]);
+  const [ticketsloading, setTicketsLoading] = useState(true);
+  const [ticketserror, setTicketsError] = useState(null);
+  // Pagination state
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10); // Max items per page
+
+  useEffect(() => {
+    const fetchManagers = async () => {
+      try {
+        setTableLoading(true);
+        const response = await getAllLineManagers();
+        console.log(response.data); // Assuming the API response is in `response.data`
+        setTableData(response.data);
+      } catch (err) {
+        setTableError('Failed to fetch line managers');
+        console.error('Error:', err);
+      } finally {
+        setTableLoading(false);
+      }
+    };
+    const fetchOpenTickets = async () => {
+      try {
+        const response = await getAllTickets();
+        console.log(response.data); // Assuming the API response is in `response.data`
+        setTicketsData(response.data);
+      } catch (err) {
+        setTicketsError('Failed to fetch open tickets');
+        console.error('Error:', err);
+      } finally {
+        setTicketsLoading(false);
+      }
+    }
+    fetchOpenTickets();
+    fetchManagers();
+  }, []);
+  // Handle page change
+  const handlePageChange = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  // Handle rows per page change
+  const handleRowsPerPageChange = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0); // Reset to first page
+  };
+  
 
   
 
@@ -80,8 +129,8 @@ export default function DashBoard() {
           {/* Stat Cards Grid */}
           <Grid item xs={12} sm={6} md={4}>
             <StatCard
-              title="Line Managers"
-              value="1,245"
+              title="Total Line Managers"
+              value={tableData ? tableData.length : 0}
               icon={AccountCircle}  // You can use any Material Icon
             />
           </Grid>
@@ -89,7 +138,7 @@ export default function DashBoard() {
           <Grid item xs={12} sm={6} md={4}>
             <StatCard
               title="Active Tickets"
-              value="56"
+              value={ticketsData?ticketsData.length:0}
               icon={NotificationsIcon}  // You can use any Material Icon
             />
           </Grid>
@@ -110,28 +159,49 @@ export default function DashBoard() {
             <Typography variant="h6" gutterBottom>
               Line Managers
             </Typography>
-            <TableContainer className='topic-container'>
-              <Table>
-                <TableHead className='head'>
-                  <TableRow>
-                    <TableCell style={{ fontWeight: 'Bold',color:'white' }}>{' '}</TableCell>
-                    <TableCell style={{ fontWeight: 'Bold',color:'white' }}>Desk Name</TableCell>
-                    <TableCell style={{ fontWeight: 'Bold',color:'white' }}>Service Manager</TableCell>
-                    <TableCell style={{ fontWeight: 'Bold',color:'white' }}>Ticket Waiting</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {tableData.map((row, index) => (
-                    <TableRow key={index}>
-                        <TableCell>{index+1}</TableCell>
-                      <TableCell>{row.name}</TableCell>
-                      <TableCell>{row.email}</TableCell>
-                      <TableCell>{row.role}</TableCell>
+            
+            
+            <TableContainer  className='topic-container'>
+                <Table>
+                  <TableHead  className='head'>
+                    <TableRow>
+                      <TableCell style={{ fontWeight: 'Bold', color: 'white' }}>{' '}</TableCell>
+                      <TableCell style={{ fontWeight: 'Bold', color: 'white' }}>Desk Name</TableCell>
+                      <TableCell style={{ fontWeight: 'Bold', color: 'white' }}>Service Manager</TableCell>
+                      <TableCell style={{ fontWeight: 'Bold', color: 'white' }}>Ticket Waiting</TableCell>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+                  </TableHead>
+                  {tableloading? (
+                    <Typography>Loading...</Typography>
+                  ) : (
+                    <TableBody>
+                    {tableData
+                      .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) // Slice data for current page
+                      .map((row, index) => (
+                        <TableRow key={index}>
+                          <TableCell>{index + 1 + page * rowsPerPage}</TableCell>
+                          <TableCell>{row.name}</TableCell>
+                          <TableCell>{row.email}</TableCell>
+                          <TableCell>{row.role}</TableCell>
+                        </TableRow>
+                      ))}
+                  </TableBody>
+                  )}
+                  
+                </Table>
+              </TableContainer>
+
+              {/* Pagination Controls */}
+              <TablePagination
+                component="div"
+                count={tableData.length} // Total number of items
+                page={page}
+                onPageChange={handlePageChange}
+                rowsPerPage={rowsPerPage}
+                onRowsPerPageChange={handleRowsPerPageChange}
+                rowsPerPageOptions={[5, 10, 20]} // Options for items per page
+              />
+            
           </Grid>
 
           {/* Chat Room Section */}

@@ -15,4 +15,5 @@ fi
 # Start the server with Docker Compose
 echo "Starting server using Docker Compose..."
 docker-compose -f docker-compose.dev.yml down
-docker-compose -f docker-compose.dev.yml up --build server client
+# docker-compose -f docker-compose.dev.yml up --build server client
+docker-compose -f docker-compose.dev.yml up --build

@@ -18,3 +18,14 @@ export const createTicketApi = async (ticketData) => {
 export const getTicketByIdApi = async (id) => {
   return await servicesAxiosInstance.get(`/api/v1/tickets/${id}`);
 }
+export const getAllTickets = async () => {
+  return await servicesAxiosInstance.get(`/api/v1/tickets`);
+}
+
+export const getAllLineManagers = async () => {
+  return await servicesAxiosInstance.get(`/api/v1/lineManagers/get-all-lineManagers`);
+}
+
+export const getAllManagersbyUserId = async (user_id) => {
+  return await servicesAxiosInstance.get(`/api/v1/lineManagers/get-lineManagers?user_id=${user_id}`);
+}
