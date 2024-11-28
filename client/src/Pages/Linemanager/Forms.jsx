@@ -1,11 +1,12 @@
-import Navbar from '@/components/shared/Navbar';
-import Sidenav from '@/components/shared/Sidenav';
-import { useState } from 'react';
-import Form from './Gajns';
+import Navbar from "@/components/shared/Navbar";
+import Sidenav from "@/components/shared/Sidenav";
+import { useState } from "react";
+import Form from "./Gajns";
 // import React from 'react'
 
 const Forms = () => {
     const [activeForm, setActiveForm] = useState(1);
+
   return (
     <section>
       <Navbar />
