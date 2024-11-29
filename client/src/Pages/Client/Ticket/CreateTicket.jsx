@@ -7,7 +7,7 @@ import {useNavigate} from 'react-router-dom';
 
 const CreateTicket = () => {
   const [alert, setAlert] = useState(false);
-  const [msg , setMsg] = useState('');
+  const [message , setMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const [alertColor, setAlertColor] = useState('green');
   const navigate = useNavigate();
