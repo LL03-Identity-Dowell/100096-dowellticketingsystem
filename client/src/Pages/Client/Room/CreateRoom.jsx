@@ -3,7 +3,7 @@ import { FormControl, Box, InputLabel, FormHelperText, MenuItem, CircularProgres
 import Button from '@/components/Button/Button';
 import { TextField, Select } from '@/components/ui/input';
 import { Title } from '@/components/ui/Typography';
-import { getAllWorkSpaces } from '@/services/api.services';
+import { addRoomToWorkspace, getAllWorkSpaces } from '@/services/api.services';
 
 export default function CreateRoom() {
   const [roomName, setRoomName] = React.useState('');
@@ -39,20 +39,31 @@ export default function CreateRoom() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
+    // Validate form before proceeding
     if (validateForm()) {
       setIsLoading(true); // Set loading state to true when submitting
       try {
         console.log('Room Name:', roomName);
         console.log('Workspace ID:', workspaceId);
-        // Call your API to add the room (e.g., addRoomToWorkspace(workspaceId, roomName))
+        const response = await addRoomToWorkspace(workspaceId, roomName); // Pass the correct API parameters
+        console.log('Room created successfully:', response.data?.data);
+  
+        // Optionally, reset the form fields or provide feedback
+        setRoomName('');
+        setWorkspaceId('');
+        alert('Room created successfully!'); // Replace with a toast/snackbar for better UX
       } catch (error) {
         console.error('Error creating room:', error);
+  
+        // Show an error message to the user (replace alert with a snackbar if needed)
+        alert(error.response?.data?.message || 'An error occurred while creating the room.');
       } finally {
         setIsLoading(false); // Reset loading state after submission
       }
     }
   };
+  
 
   React.useEffect(() => {
     const fetchWorkSpaces = async () => {
