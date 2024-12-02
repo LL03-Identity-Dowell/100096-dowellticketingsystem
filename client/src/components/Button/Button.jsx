@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import { Button as MuiButton } from '@mui/material';
 
-export default function Button({ label, onClick, variant, color, size, startIcon, endIcon, disabled }) {
+export default function Button({ label,type, onClick, variant, color, size, startIcon, endIcon, disabled }) {
   return (
     <MuiButton
       variant={variant}
       color={color}
+      type={type}
       size={size}
       onClick={onClick}
       startIcon={startIcon}
@@ -31,6 +32,7 @@ Button.propTypes = {
   startIcon: PropTypes.element, // Optional icon displayed at the start
   endIcon: PropTypes.element, // Optional icon displayed at the end
   disabled: PropTypes.bool, // Disable button
+  type:PropTypes.string
 };
 
 // Default Props
