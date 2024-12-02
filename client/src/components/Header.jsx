@@ -7,42 +7,32 @@ import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-// import MenuIcon from '@mui/icons-material/Menu';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import logo from '../assets/logo.png';
 import { Avatar, Tooltip } from '@mui/material';
 import { useNavigate, useLocation  } from 'react-router-dom';
-
+import useScreenType from '../hooks/useScreenType';
+import SideBar from './SideBar';
 
 export default function Header() {
+  const { isMobile } = useScreenType();
   const navigate =useNavigate();
   const location = useLocation();  // Use useLocation to get the current URL
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
   const handleMenuClose = () => {
     setAnchorEl(null);
-    handleMobileMenuClose();
 
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const menuId = 'primary-search-account-menu';
@@ -99,58 +89,16 @@ export default function Header() {
       )}
     </Menu>
   );
-
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
+  
+  const [open, setOpen] = React.useState(false);
+  const sidebaritems =[
+    {href:'/admin/linemanager',name:'Topics', icon:<InboxIcon />},
+    {href:'/admin/linemanager',name:'LineManagers', icon:<InboxIcon />},
+    {href:'/admin/linemanager',name:'Links', icon:<InboxIcon />}
+  ]
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -183,7 +131,7 @@ export default function Header() {
             Customer Support | Line Manager
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
                 <MailIcon className='icon' />
@@ -198,7 +146,16 @@ export default function Header() {
                 <NotificationsIcon className='icon' />
               </Badge>
             </IconButton>
-            
+            {isMobile?<IconButton
+              size="large"
+              aria-label="show more"
+              aria-haspopup="true"
+              onClick={toggleDrawer(true)}
+              color="inherit"
+            >
+              <MenuOutlinedIcon sx={{ fontSize: 40}} />
+            </IconButton>:
+            <Box sx={{ display: { xs: 'flex', md: 'flex' } }}>
             <Tooltip title="Profile">
               <IconButton
                 size="large"
@@ -213,22 +170,24 @@ export default function Header() {
                 {anchorEl?<AccountCircle sx={{ fontSize: 40 }} /> :<Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />}
                 </IconButton>
             </Tooltip>
-          </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="show more"
-              aria-controls={mobileMenuId}
               aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
+              onClick={toggleDrawer(true)}
               color="inherit"
             >
-              <MoreIcon />
+              <MenuOutlinedIcon sx={{ fontSize: 40}}/>
             </IconButton>
+            </Box>}
+            
           </Box>
+          
         </Toolbar>
+        {/* SideBar for Mobile */}
+        <SideBar open={open} onClose={toggleDrawer(false)} sidebaritems={sidebaritems} />
       </AppBar>
-      {renderMobileMenu}
+      
       {renderMenu}
     </Box>
   );
