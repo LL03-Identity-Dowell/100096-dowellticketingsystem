@@ -68,7 +68,7 @@ export default function DashBoard() {
         setTableLoading(true);
         const response = await getAllLineManagers();
         console.log(response.data); // Assuming the API response is in `response.data`
-        setTableData(response.data);
+        setTableData(response.data.data);
       } catch (err) {
         setTableError('Failed to fetch line managers');
         console.error('Error:', err);
@@ -80,7 +80,7 @@ export default function DashBoard() {
       try {
         const response = await getAllTickets();
         console.log(response.data); // Assuming the API response is in `response.data`
-        setTicketsData(response.data);
+        setTicketsData(response.data.data);
       } catch (err) {
         setTicketsError('Failed to fetch open tickets');
         console.error('Error:', err);
@@ -130,7 +130,7 @@ export default function DashBoard() {
           <Grid item xs={12} sm={6} md={4}>
             <StatCard
               title="Total Line Managers"
-              value={tableData ? tableData.length : 0}
+              value={`${tableData ? tableData.length : 0}`}
               icon={AccountCircle}  // You can use any Material Icon
             />
           </Grid>
@@ -138,7 +138,7 @@ export default function DashBoard() {
           <Grid item xs={12} sm={6} md={4}>
             <StatCard
               title="Active Tickets"
-              value={ticketsData?ticketsData.length:0}
+              value={`${ticketsData?ticketsData.length:0}`}
               icon={NotificationsIcon}  // You can use any Material Icon
             />
           </Grid>
@@ -175,8 +175,7 @@ export default function DashBoard() {
                     <Typography>Loading...</Typography>
                   ) : (
                     <TableBody>
-                    {tableData
-                      .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) // Slice data for current page
+                    {tableData?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) // Slice data for current page
                       .map((row, index) => (
                         <TableRow key={index}>
                           <TableCell>{index + 1 + page * rowsPerPage}</TableCell>
