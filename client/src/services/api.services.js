@@ -29,3 +29,15 @@ export const getAllLineManagers = async () => {
 export const getAllManagersbyUserId = async (user_id) => {
   return await servicesAxiosInstance.get(`/api/v1/lineManagers/get-lineManagers?user_id=${user_id}`);
 }
+
+export const getAllWorkSpaces = async () => {
+  return await servicesAxiosInstance.get(`/api/v1/workspaces/`);
+}
+export const addRoomToWorkspace = async (workspaceId, room_name) => {
+  return await servicesAxiosInstance.post(`/api/v1/workspaces/?workspaceId=${workspaceId}/rooms`,{
+                  "room_name":room_name, 
+              });
+}
+export const getRoomsFromWorkspace = async (workspaceId) => {
+  return await servicesAxiosInstance.get(`/api/v1/workspaces/?workspaceId=${workspaceId}/rooms`);
+}

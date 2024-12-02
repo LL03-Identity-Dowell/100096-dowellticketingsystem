@@ -452,7 +452,6 @@ color: rgb(156 163 175);
 .splitter input{
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   outline: 1px solid rgb(206, 205, 205);
-  margin-top: ;
   border-radius: 5px;
   width: 98%;
   height: 35px;
@@ -493,6 +492,9 @@ color: rgb(156 163 175);
   background-color: var(--button-primary) !important;
 }
 /* Default state */
+.MuiInputLabel-formControl {
+  color:var(--border-color) !important;
+}
 .MuiInputBase-formControl,
 .MuiOutlinedInput-root {
     border: none !important; /* Remove border completely */
@@ -500,6 +502,7 @@ color: rgb(156 163 175);
     border-radius: 4px !important;
     font-weight: 300 !important;
     transition: box-shadow 0.3s ease; /* Only transition box-shadow for smoothness */
+    border: 1px solid var(--border-color) !important;
 }
 
 /* Hover state */

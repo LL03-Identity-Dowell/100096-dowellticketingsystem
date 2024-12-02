@@ -1,22 +1,21 @@
 import * as React from 'react';
-import { FormControl, Box, InputLabel, FormHelperText, MenuItem } from '@mui/material';
+import { FormControl, Box, InputLabel, FormHelperText, MenuItem, CircularProgress } from '@mui/material';
 import Button from '@/components/Button/Button';
 import { TextField, Select } from '@/components/ui/input';
 import { Title } from '@/components/ui/Typography';
+import { getAllWorkSpaces } from '@/services/api.services';
 
 export default function CreateRoom() {
   const [roomName, setRoomName] = React.useState('');
   const [workspaceId, setWorkspaceId] = React.useState('');
-  const [workspaces] = React.useState([
-    { id: 'ws1', name: 'Workspace 1' },
-    { id: 'ws2', name: 'Workspace 2' },
-    { id: 'ws3', name: 'Workspace 3' },
-  ]); // A list of workspace IDs. This can be fetched from an API
-
+  const [workspaces, setWorkspaces] = React.useState([]);
   const [errors, setErrors] = React.useState({
     roomName: '',
     workspaceId: '',
   });
+  const [isLoading, setIsLoading] = React.useState(false); // Renamed to isLoading for clarity
+  const [workspacesLoading, setWorkspacesLoading] = React.useState(false); // Separate loading state for workspaces
+  const [workspacesError, setWorkspacesError] = React.useState(''); // Separate error state for workspace fetching
 
   const handleRoomNameChange = (event) => {
     setRoomName(event.target.value);
@@ -38,14 +37,39 @@ export default function CreateRoom() {
     return Object.keys(formErrors).length === 0;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (validateForm()) {
-      console.log('Room Name:', roomName);
-      console.log('Workspace ID:', workspaceId);
+      setIsLoading(true); // Set loading state to true when submitting
+      try {
+        console.log('Room Name:', roomName);
+        console.log('Workspace ID:', workspaceId);
+        // Call your API to add the room (e.g., addRoomToWorkspace(workspaceId, roomName))
+      } catch (error) {
+        console.error('Error creating room:', error);
+      } finally {
+        setIsLoading(false); // Reset loading state after submission
+      }
     }
   };
+
+  React.useEffect(() => {
+    const fetchWorkSpaces = async () => {
+      try {
+        setWorkspacesLoading(true);
+        const response = await getAllWorkSpaces();
+        setWorkspaces(response.data.data);
+      } catch (err) {
+        setWorkspacesError('Failed to fetch workspaces');
+        console.error('Error:', err);
+      } finally {
+        setWorkspacesLoading(false);
+      }
+    };
+
+    fetchWorkSpaces();
+  }, []);
 
   return (
     <Box
@@ -85,33 +109,40 @@ export default function CreateRoom() {
           onChange={handleRoomNameChange}
           error={!!errors.roomName}
           helperText={errors.roomName}
-          sx={{marginBottom:'16px'}}
+          sx={{ marginBottom: '16px' }}
         />
 
-        <FormControl fullWidth error={!!errors.workspaceId} sx={{marginTop:'16px'}}>
+        <FormControl fullWidth error={!!errors.workspaceId} sx={{ marginTop: '16px' }}>
           <InputLabel id="workspace-id-label">Workspace ID</InputLabel>
           <Select
             labelId="workspace-id-label"
             value={workspaceId}
             label="Workspace ID"
             onChange={handleWorkspaceIdChange}
+            disabled={workspacesLoading} // Disable select while fetching workspaces
           >
             {workspaces.map((workspace, index) => (
-              <MenuItem key={index} value={workspace.id}>
-                {workspace.name}
+              <MenuItem key={index} value={workspace.workspace_id}>
+                {workspace.workspace_id}
               </MenuItem>
             ))}
           </Select>
           {errors.workspaceId && <FormHelperText>{errors.workspaceId}</FormHelperText>}
         </FormControl>
 
+        {/* Loading or Error Feedback for workspaces */}
+        {workspacesLoading && <Box sx={{ textAlign: 'center', marginTop: '16px' }}>Loading workspaces...</Box>}
+        {workspacesError && <Box sx={{ textAlign: 'center', color: 'red', marginTop: '16px' }}>{workspacesError}</Box>}
+
         <Button
           type="submit"
-          label="Create Room"
+          label={isLoading ? 'Creating Room' : 'Create Room'}
           color="primary"
           fullWidth
           size="large"
           sx={{ marginTop: '16px' }}
+          disabled={isLoading} // Disable the button during loading
+          startIcon={isLoading ? <CircularProgress size={24} color="inherit" /> : null} // Add spinner while loading
         />
       </Box>
     </Box>

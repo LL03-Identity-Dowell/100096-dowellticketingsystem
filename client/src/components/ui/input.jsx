@@ -28,16 +28,12 @@ Input.propTypes = {
 };
 
 // TextField Component
-const TextField = ({ label, value, className = '', onChange, ...props }) => {
-  const classname = cn(
-    'flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
-    className
-  );
+const TextField = ({ label, value, className, onChange, ...props }) => {
 
   return (
     <MuiTextField
       label={label}
-      className={classname}
+      className={className}
       value={value}
       onChange={onChange}
       {...props}
@@ -54,11 +50,7 @@ TextField.propTypes = {
 };
 
 // Select Component
-const Select = ({ labelId, value, label, className = '', onChange, children }) => {
-  const classname = cn(
-    'flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
-    className
-  );
+const Select = ({ labelId, value, label, className , onChange, children }) => {
 
   return (
     <MuiSelect
@@ -66,7 +58,7 @@ const Select = ({ labelId, value, label, className = '', onChange, children }) =
       value={value}
       label={label}
       onChange={onChange}
-      className={classname}
+      className={className}
     >
       {children}
     </MuiSelect>
