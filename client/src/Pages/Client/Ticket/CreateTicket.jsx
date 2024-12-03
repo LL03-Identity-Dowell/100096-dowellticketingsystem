@@ -37,12 +37,12 @@ const CreateTicket = () => {
      setMsg('please wait... while creating your ticket')
     try {
       const ticketResponse = await createTicketApi(ticketData);
-      console.log(ticketResponse);
-      if (ticketResponse.statusCode === 201 && ticketResponse.data?.id) {
+      console.log(ticketResponse.data.data);
+      if (ticketResponse.data?.data?.statusCode === 201 && ticketResponse.data?._id) {
         setMsg('Ticket created successfully!');
         setTimeout(() => {
-          navigate(`/queuing/${ticketResponse.data.id}`);
-        }, 3000);
+          navigate(`/queuing/${ticketResponse.data.data._id}`);
+        }, 1000);
       } else {
         throw new Error('Failed to create ticket');
       }
