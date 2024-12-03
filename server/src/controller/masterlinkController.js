@@ -11,7 +11,63 @@ const generateLink = async (req, res) => {
     if (error) {
         return httpError(req, res, 404, responseMessage.VALIDATION_ERROR, error.details[0].message)
     }
-    const { workspace_id, api_key, number_of_links, product_distribution, usernames } = value;
+    const { workspace_id, api_key, number_of_links, available_links, product_distribution, usernames } = value;
+
+
+  // Ensure all necessary data is defined and valid
+  if (
+    typeof number_of_links === 'undefined' ||
+    typeof available_links === 'undefined' ||
+    typeof api_key === 'undefined' ||
+    typeof workspace_id === 'undefined' ||
+    typeof product_distribution !== 'object' ||
+    typeof usernames === 'undefined'
+  ) {
+    return httpError(
+      req,
+      res,
+      400,
+      responseMessage.VALIDATION_ERROR,
+      'Required fields are missing or invalid.'
+    );
+  }
+
+  // Condition 1: number_of_links must not be greater than available_links (equal is allowed)
+  if (number_of_links > available_links) {
+    return httpError(
+      req,
+      res,
+      400,
+      responseMessage.VALIDATION_ERROR,
+      'number_of_links must not exceed available_links.'
+    );
+  }
+
+  // Condition 2: available_links must equal the number of items in product_distribution
+  const productDistributionCount = Object.keys(product_distribution).length;
+  if (available_links !== productDistributionCount) {
+    return httpError(
+      req,
+      res,
+      400,
+      responseMessage.VALIDATION_ERROR,
+      'available_links must equal the number of items in product_distribution.'
+    );
+  }
+
+  // Condition 3: The number of usernames must equal the number of items in product_distribution
+  if (usernames.length > productDistributionCount) {
+    return httpError(
+      req,
+      res,
+      400,
+      responseMessage.VALIDATION_ERROR,
+      'The number of usernames must not exceed the number of items in product_distribution.'
+    );
+  }
+
+
+
     const existingLink = await Masterlink.findOne({ api_key, workspace_id });
     if (existingLink) {
         // return httpError(req, res, 409, responseMessage.DUPLICATED_ENTRY)
@@ -27,7 +83,8 @@ const generateLink = async (req, res) => {
     const payload = {
         link_id,
         number_of_links,
-        available_links: number_of_links,
+        available_links,
+        // available_links: number_of_links,
         product_distribution,
         usernames,
         is_active: true,
@@ -43,7 +100,8 @@ const generateLink = async (req, res) => {
         const masterlink = new Masterlink({
             link_id,
             number_of_links,
-            available_links: number_of_links,
+            available_links,
+            // available_links: number_of_links,
             product_distribution,
             usernames,
             is_active: true,
@@ -60,7 +118,7 @@ const generateLink = async (req, res) => {
             link_id,
             master_link,
             number_of_links,
-            available_links: number_of_links,
+            available_links,
             product_distribution,
             usernames,
             is_active: true,

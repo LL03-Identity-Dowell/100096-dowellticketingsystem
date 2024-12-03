@@ -3,7 +3,7 @@ import Room from '../models/roomModel.js';  // Your Room model
 
 // Create a new workspace
 export const createWorkspace = async (req, res) => {
-    const { workspace_name, location, capacity } = req.body;
+    const { workspace_name, location, capacity, api_key, org_id, id } = req.body;
 
     // Manual validation
     if (!workspace_name || !location || !capacity) {
@@ -18,7 +18,10 @@ export const createWorkspace = async (req, res) => {
         const newWorkspace = new Workspace({
             workspace_name,
             location,
-            capacity
+            capacity,
+            api_key,
+            org_id,
+            id
         });
 
         await newWorkspace.save();

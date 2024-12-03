@@ -7,6 +7,11 @@ const lineManagerSchema = new mongoose.Schema(
             ref: 'User',
             required: true
         },
+        user_name: {
+            type: String,
+            ref: 'User',
+            required: true
+        },
         ticket_ids: [
             {
                 type: mongoose.Schema.Types.ObjectId,

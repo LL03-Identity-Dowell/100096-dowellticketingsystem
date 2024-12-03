@@ -15,7 +15,7 @@ const create = async (req, res) => {
     }
 
     try {
-        const { user_id } = req.body;
+        const { user_id, user_name } = req.body;
         const existingLineManager = await LineManager.findOne({ user_id });
         if (existingLineManager) {
             return res.status(400).json({
