@@ -36,7 +36,7 @@ export const topicControllerValidation = Joi.object({
 })
 
 export const lineManagerValidationSchema = Joi.object({
-
+    user_name: Joi.string().required(),
     user_id: Joi.string().required().regex(/^[0-9a-fA-F]{24}$/),  // Validates as a MongoDB ObjectId
     ticket_ids: Joi.array().items(Joi.string().regex(/^[0-9a-fA-F]{24}$/)),  // Array of ObjectId strings
     // department: Joi.string().required(),
@@ -44,5 +44,5 @@ export const lineManagerValidationSchema = Joi.object({
     average_serving_time: Joi.number(),  // Allows float or integer
     ticket_count: Joi.number().integer().default(0),
     is_active: Joi.boolean().default(true),
-    workspace: Joi.string().required()
+    // workspace: Joi.string().required()
 })

@@ -4,90 +4,408 @@ import { GoPlus } from "react-icons/go";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader/Loader";
-
 const Form = ({ id }) => {
-  const [selectedManager, setSelectedManager] = useState(
-   "5678feedcafebabe1234dead"
-);
-  const [selectedTopic, setSelectedTopic] = useState("");
-  const [userNameCount, setUserNameCount] = useState(0);
-  const [linkNumber, setLinkNumber] = useState(0);
-  const [url, setUrl] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [viewLine, setViewLine] = useState(false);
-  const [viewTopic, setViewTopic] = useState(false);
-  const [viewLink, setViewLink] = useState(false);
-  const [team, setTeam] = useState([]);
+  const [selectedManager, setSelectedManager] = useState();
+  const [workSpaceId, setWorkSpaceId] = useState(
+    "674cc8a7458006fd569fc2ad"
+ );
+   const [selectedTopic, setSelectedTopic] = useState("");
+   const [userNameCount, setUserNameCount] = useState([]);
+   const [linkNumber, setLinkNumber] = useState(0);
+   const [availableLink, setAvailableLink] = useState(4);
+   const [productDistribution, setProductDistribution]= useState({
+    product1:5,
+    product2:5,
+    product3:5,
+    product4:5,
+   })
+   const [url, setUrl] = useState("");
+   const [loading, setLoading] = useState(false);
+   const [viewLine, setViewLine] = useState(false);
+   const [viewTopic, setViewTopic] = useState(false);
+   const [viewLink, setViewLink] = useState(false);
+   const [team, setTeam] = useState([]);
+   const [linkData, setLinkData] = useState([])
+   const [lineManagersData, setLineManagersData] = useState([])
+   const [topicsData, setTopicsData] = useState([])
+   const [linkUsernames, setLinkUsernames] = useState([])
 
-  const handleSelectedManager = (event) => {
-    setSelectedManager(event.target.value);
-  };
-  const handleSelectedTopic = (event) => {
-    setSelectedTopic(event.target.value);
-  };
-  const handleUserNameCountChange = (event) => {
-    setUserNameCount(event.target.value);
-  };
-  const handleLinkNumberChange = (event) => {
-    setLinkNumber(event.target.value);
-  };
-  const hanldeUrlChange = (event) => {
-    setUrl(event.target.value);
-  };
 
-  useEffect(() => {
-    async function getter() {
-      try {
-        setLoading(false);
-        axios
-          .post("https://100014.pythonanywhere.com/api/userinfo/", {
-            session_id: "wlkbp073e3ly3qy6tjr4d4p4kfkz5bci",
-          })
-          .then(function (response) {
-            if (response.status === 200) {
-              setLoading(true);
-              setTeam(response.data.members.team_member);
-            }
-          })
+   const [isSecondInputEnabled, setIsSecondInputEnabled] = useState(false); // Enable/disable second input
+   const [isThirdInputEnabled, setIsThirdInputEnabled] = useState(false); 
+ 
 
-          .catch(function (error) {
-            console.log(error);
-          });
-      } catch (error) {
-        console.log(error);
+
+    const handleSelectedManager = (event) => {
+      setSelectedManager(event.target.value);
+    };
+    const handleSelectedTopic = (event) => {
+      setSelectedTopic(event.target.value);
+    };
+    const handleUserNameCountChange = (event) => {
+      setUserNameCount(event.target.value);
+    };
+    // const handleLinkNumberChange = (event) => {
+    //   setLinkNumber(event.target.value);
+    // };
+    const hanldeUrlChange = (event) => {
+      setUrl(event.target.value);
+    };
+  
+    useEffect(() => {
+      async function getter() {
+        try {
+          setLoading(false);
+          axios
+            .post("https://100014.pythonanywhere.com/api/userinfo/", {
+              session_id: "wlkbp073e3ly3qy6tjr4d4p4kfkz5bci",
+            })
+            .then(function (response) {
+              if (response.status === 200) {
+                console.log(response)
+                setLoading(true);
+                setTeam(response.data.members.team_member);
+                setLinkUsernames(response.data.otherorg_list)
+                console.log(linkUsernames)
+              }
+            })
+  
+            .catch(function (error) {
+              console.log(error);
+            });
+        } catch (error) {
+          console.log(error);
+        }
       }
-    }
-    getter();
-  }, []);
-console.log(selectedManager)
-  const LinemanagerSubmit = async (e) => {
-    e.preventDefault(); 
-
-    try {
-      const response = axios
-      .post("http://localhost:5000/api/v1/lineManagers/create-lineManager", {
-        user_id:selectedManager
-      })
-
-      console.log(response)
-      // if (response.status === 200) {
-      //   console.log("Form submitted successfully!");
-      //   alert("Form submitted successfully!");
-      // } else {
-      //   console.error("Error submitting the form");
-      //   alert("Error submitting the form");
+      // async function getllinermanagers(){
+      //   try {
+      //     axios
+      //     .get("http://localhost:5000/api/v1/lineManagers/get-all-lineManagers", 
+      //     )
+      //     .then(function (response) {
+      //       if (response.status === 200) {
+      //         console.log(response)
+      //         setLineManagersData(response.data.data)
+      //         // setLoading(true);
+      //         // setTeam(response.data.members.team_member);
+      //       }
+      //     })
+      //   } catch (error) {
+      //     console.log(error)
+      //   }
       // }
+      getter();
+   
+    }, []);
 
-    } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred while submitting the form");
+    useEffect(() => {
+      async function getllinermanagers() {
+        try {
+          const response = await axios.get(
+            "http://localhost:5000/api/v1/lineManagers/get-all-lineManagers"
+          );
+          if (response.status === 200) {
+            // console.log(response);
+            setLineManagersData(response.data.data);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+  
+      getllinermanagers(); // Run initially
+  
+      // Set up interval to run the function every 5 seconds
+      const interval = setInterval(() => {
+        getllinermanagers();
+      }, 5000); // 5000ms = 5 seconds
+  
+      // Cleanup interval on component unmount
+      return () => clearInterval(interval);
+    }, []);
+
+
+
+    useEffect(() => {
+      async function gettopics() {
+        try {
+          const response = await axios.get(
+            `http://localhost:5000/api/v1/topics/${workSpaceId}`
+          );
+          if (response.status === 200) {
+            setTopicsData(response.data.data)
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+  
+      gettopics(); // Run initially
+  
+      // Set up interval to run the function every 5 seconds
+      const interval = setInterval(() => {
+        gettopics();
+      }, 5000); // 5000ms = 5 seconds
+  
+      // Cleanup interval on component unmount
+      return () => clearInterval(interval);
+    }, []);
+  
+    // const LinemanagerSubmit = async (e) => {
+    //   e.preventDefault(); 
+  
+    //   try {
+    //     const response = axios
+    //     .post("http://localhost:5000/api/v1/lineManagers/create-lineManager", {
+    //       user_id:selectedManager,
+    //     })
+    //     .then((response) => {
+    //       console.log(response.data); // Access the resolved data here
+    //       // alert("Form submitted successfully!");
+    //     })
+  
+    //   } catch (error) {
+    //     console.error("Error:", error);
+    //     alert("An error occurred while submitting the form");
+    //   }
+  
+  
+    // };
+
+
+    const LinemanagerSubmit = async (e) => {
+      e.preventDefault();
+    
+      // Function to generate a random 24-character hex string
+      const generateRandomHex = () => {
+        return Array.from({ length: 24 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
+      };
+    
+      // Generate a random string for the `user_id`
+      const randomUserId = generateRandomHex();
+    
+      try {
+        const response = await axios.post(
+          "http://localhost:5000/api/v1/lineManagers/create-lineManager",
+          {
+            user_id: randomUserId, // Pass the generated string here
+            user_name: selectedManager
+          }
+        );
+    
+        console.log(response.data); // Access the resolved data here
+        alert("Form submitted successfully!");
+      } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred while submitting the form");
+      }
+    };
+  
+   
+    const TopicSubmit = async (e) => {
+      e.preventDefault(); 
+  
+      try {
+        const response = axios
+        .post("http://localhost:5000/api/v1/topics",
+  
+          {
+            room_name:selectedTopic,
+            workspace_id:workSpaceId
+          }
+        )
+        .then((response) => {
+          console.log(response.data); // Access the resolved data here
+          
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+  
+  
+      } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred while submitting the form");
+      }
+
+  
+    };
+  //   const GenerateLinkSubmit = async (e) => {
+  //     e.preventDefault(); 
+  
+  //     try {
+  //       const response = axios
+  //       .post("http://localhost:5000/api/v1/generate-masterlink",
+  
+  //         {
+  //           workspace_id: "feedcafedead12345678beef",
+  //           api_key: "54f46273-2933-4501-9b96-04081ae2218d",
+  //         number_of_links: linkNumber,
+  //           available_links: 10,
+  //           product_distribution: {
+  //             product1: 5,
+  //             product2: 5
+  //           },
+  //           usernames: ["user1", "user2", "user3"],
+  //           is_active: true
+  //         }
+  //       )
+  //       .then((response) => {
+  //         console.log(response.data); // Access the resolved data here
+  //         setLinkData(response.data)
+  //         console.log(linkData.data.master_link)
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //       });
+  
+  
+  //     } catch (error) {
+  //       console.error("Error:", error);
+  //       alert("An error occurred while submitting the form");
+  //     }
+  // console.log(linkData.master_link)
+  
+  //   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Filtered options (to exclude already selected usernames)
+  const availableOptions = linkUsernames.filter(
+    (member) => !userNameCount.includes(member.org_name)
+  );
+
+  // Handle changes for the first input (Link Number)
+  const handleLinkNumberChange = (e) => {
+    const value = parseInt(e.target.value, 10);
+
+    if (!isNaN(value) && value > 0 && value <= linkUsernames.length) {
+      setLinkNumber(value);
+      setUserNameCount([]); // Reset the selected usernames
+      setIsSecondInputEnabled(true); // Enable the second input
+      setIsThirdInputEnabled(false); // Disable the third input until conditions are met
+    } else {
+      alert(`Please enter a number between 1 and ${availableLink}.`);
+      setLinkNumber("");
+      setIsSecondInputEnabled(false); // Disable the second input
+      setIsThirdInputEnabled(false); // Disable the third input
+    }
+  };
+
+  // Handle changes for the second input (Username Selection)
+  const handleUserNameSelection = (e) => {
+    const selectedUsername = e.target.value;
+
+    // Add the selected username to the array
+    if (selectedUsername && !userNameCount.includes(selectedUsername)) {
+      setUserNameCount((prev) => [...prev, selectedUsername]);
     }
 
+    // Check if the required number of usernames has been selected
+    if (userNameCount.length + 1 === linkNumber) {
+      setIsThirdInputEnabled(true); // Enable the third input
+    } else {
+      setIsThirdInputEnabled(false); // Ensure third input stays disabled if conditions aren't met
+    }
+  };
+
+  // Handle changes for the third input (URL)
+  const handleUrlChange = (e) => {
+    setUrl(e.target.value);
+  };
+
+  // Form submission
+  const GenerateLinkSubmit = (e) => {
+    e.preventDefault();
+
+    // Validation to ensure all fields are filled
+    if (!linkNumber || userNameCount.length !== linkNumber || !url) {
+      alert("Please fill all fields correctly.");
+      return;
+    }
+  
+      try {
+        const response = axios
+        .post("http://localhost:5000/api/v1/generate-masterlink",
+  
+          {
+            workspace_id: "674f88995ffd979f742e174f",
+            api_key: "54f46273-2933-4501-9b96-04081ae2218d",
+          number_of_links: linkNumber,
+            available_links: availableLink,
+            product_distribution: productDistribution,
+            usernames: userNameCount,
+            is_active: true
+          }
+        )
+        .then((response) => {
+          console.log(response.data); // Access the resolved data here
+          setLinkData(response.data)
+        
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+  
+  
+      } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred while submitting the form");
+      }
+  console.log(linkData.master_link)
 
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   return (
     <>
-      {id === 1 && (
+       {id === 1 && (
         <>
           {loading ? (
             <div className="cflex centering fullpage">
@@ -191,7 +509,7 @@ console.log(selectedManager)
                                       padding: "8px",
                                     }}
                                   >
-                                    Email
+                                    User Id
                                   </th>
                                   <th
                                     style={{
@@ -199,19 +517,23 @@ console.log(selectedManager)
                                       padding: "8px",
                                     }}
                                   >
-                                    Address
+                                    Ticket Count
                                   </th>
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
+                                {
+                                  lineManagersData.map((data, index) =>{
+                                    return(
+                                      <>
+                                       <tr key={index}>
                                   <td
                                     style={{
                                       border: "1px solid #ddd",
                                       padding: "8px",
                                     }}
                                   >
-                                    1
+                                    {index+1}
                                   </td>
                                   <td
                                     style={{
@@ -219,7 +541,7 @@ console.log(selectedManager)
                                       padding: "8px",
                                     }}
                                   >
-                                    John Doe
+                                    {data.user_name}
                                   </td>
                                   <td
                                     style={{
@@ -227,7 +549,7 @@ console.log(selectedManager)
                                       padding: "8px",
                                     }}
                                   >
-                                    john.doe@example.com
+                                    {data.user_id}
                                   </td>
                                   <td
                                     style={{
@@ -235,111 +557,14 @@ console.log(selectedManager)
                                       padding: "8px",
                                     }}
                                   >
-                                    123 Main St, Cityville
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    2
-                                  </td>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    Jane Smith
-                                  </td>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    jane.smith@example.com
-                                  </td>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    456 Maple Rd, Townsville
+                                    {data.ticket_count}
                                   </td>
                                 </tr>
-                                <tr>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    3
-                                  </td>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    Bob Johnson
-                                  </td>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    bob.johnson@example.com
-                                  </td>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    789 Oak Ln, Hamlet
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    4
-                                  </td>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    Alice Brown
-                                  </td>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    alice.brown@example.com
-                                  </td>
-                                  <td
-                                    style={{
-                                      border: "1px solid #ddd",
-                                      padding: "8px",
-                                    }}
-                                  >
-                                    321 Pine Ave, Metropolis
-                                  </td>
-                                </tr>
+                                      </>
+                                    )
+                                  })
+                                }
+                               
                               </tbody>
                             </table>
                           </div>
@@ -369,8 +594,8 @@ console.log(selectedManager)
                             name="choose"
                             id=""
                             required
-                            // value={selectedManager}
-                            // onChange={handleSelectedManager}
+                            value={selectedManager}
+                            onChange={handleSelectedManager}
                           >
                             <option value="">Choose Members</option>
                             {team
@@ -380,7 +605,7 @@ console.log(selectedManager)
                                   <>
                                     <option
                                       key={index}
-                                      value={members.member_code}
+                                      value={members.first_name}
                                     >
                                       {members.alias}
                                     </option>
@@ -388,11 +613,7 @@ console.log(selectedManager)
                                 );
                               })}
 
-                            {/* <option value="second">ssss</option>
-                        <option value="thrid">ssss</option>
-                        <option value="fouth">ssss</option>
-                        <option value="fifith">ssss</option>
-                        <option value="sixth">ssss</option> */}
+                            
                           </select>
                         </div>
                         <div className="formmbuttonsection">
@@ -415,6 +636,8 @@ console.log(selectedManager)
       )}
       {id === 2 && (
         <>
+        {loading ? (
+
           <div className="cflex centering fullpage">
             <div className="formNav rflex ">
               <div className="searchbar centering">
@@ -507,7 +730,7 @@ console.log(selectedManager)
                                     padding: "8px",
                                   }}
                                 >
-                                  Name
+                                  Topic Name
                                 </th>
                                 <th
                                   style={{
@@ -515,7 +738,7 @@ console.log(selectedManager)
                                     padding: "8px",
                                   }}
                                 >
-                                  Email
+                                  Created 
                                 </th>
                                 <th
                                   style={{
@@ -523,147 +746,61 @@ console.log(selectedManager)
                                     padding: "8px",
                                   }}
                                 >
-                                  Address
+                                  Last Updated
                                 </th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  1
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  John Doe
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  john.doe@example.com
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  123 Main St, Cityville
-                                </td>
-                              </tr>
-                              <tr>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  2
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  Jane Smith
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  jane.smith@example.com
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  456 Maple Rd, Townsville
-                                </td>
-                              </tr>
-                              <tr>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  3
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  Bob Johnson
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  bob.johnson@example.com
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  789 Oak Ln, Hamlet
-                                </td>
-                              </tr>
-                              <tr>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  4
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  Alice Brown
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  alice.brown@example.com
-                                </td>
-                                <td
-                                  style={{
-                                    border: "1px solid #ddd",
-                                    padding: "8px",
-                                  }}
-                                >
-                                  321 Pine Ave, Metropolis
-                                </td>
-                              </tr>
+                            {
+                                  topicsData.map((data, index) =>{
+                                    const creationTime = data.createdAt;
+                                    const UpdateTime = data.updatedAt;
+
+                                    // Convert to local time
+                                    const Createdate = new Date(creationTime);
+                                    const Updatedate = new Date(UpdateTime);
+                                    const CreatelocalTimeString = Createdate.toLocaleString();
+                                    const UpdatelocalTimeString = Updatedate.toLocaleString();
+                                    return(
+                                      <>
+                                       <tr key={index}>
+                                  <td
+                                    style={{
+                                      border: "1px solid #ddd",
+                                      padding: "8px",
+                                    }}
+                                  >
+                                    {index+1}
+                                  </td>
+                                  <td
+                                    style={{
+                                      border: "1px solid #ddd",
+                                      padding: "8px",
+                                    }}
+                                  >
+                                    {data.room_name}
+                                  </td>
+                                  <td
+                                    style={{
+                                      border: "1px solid #ddd",
+                                      padding: "8px",
+                                    }}
+                                  >
+                                    {CreatelocalTimeString}
+                                  </td>
+                                  <td
+                                    style={{
+                                      border: "1px solid #ddd",
+                                      padding: "8px",
+                                    }}
+                                  >
+                                    {UpdatelocalTimeString}
+                                  </td>
+                                </tr>
+                                      </>
+                                    )
+                                  })
+                                }
                             </tbody>
                           </table>
                         </div>
@@ -676,7 +813,7 @@ console.log(selectedManager)
               <>
                 <div className="formcontainer">
                   <div className="formlowersection">
-                    <form action="">
+                    <form onSubmit={TopicSubmit}>
                       <div className="formuppersection">
                         <label htmlFor="">
                           <h1>Fill Topic Information</h1>
@@ -703,7 +840,7 @@ console.log(selectedManager)
                       </div>
                       <div className="formmbuttonsection">
                         <div className="buttonholder">
-                          <button>Create Topic</button>
+                          <button type="submit">Create Topic</button>
                         </div>
                       </div>
                     </form>
@@ -712,10 +849,15 @@ console.log(selectedManager)
               </>
             )}
           </div>
+
+        ):(<><Loader /></>)}
         </>
       )}
       {id === 3 && (
         <>
+        {
+          loading ?(
+
           <div className="cflex centering fullpage">
             <div className="formNav rflex ">
               <div className="searchbar centering">
@@ -780,7 +922,7 @@ console.log(selectedManager)
                     <form action="">
                       <div className="formuppersection">
                         <label htmlFor="">
-                          <h1>View Topics</h1>
+                          <h1>View Links</h1>
                         </label>
                       </div>
 
@@ -978,115 +1120,116 @@ console.log(selectedManager)
               <>
                 <div className="formcontainer">
                   <div className="formlowersection">
-                    <form action="">
-                      <div className="formuppersection">
-                        <label htmlFor="">
-                          <h1>Fill Link Information</h1>
-                        </label>
-                      </div>
-                      <div className="thirdform">
-                        <div className="divide">
-                          <label htmlFor="" className="splitter">
-                            <span>
-                              <h2>User Name Count</h2>
-                            </span>
-                            <div
-                              style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                marginTop: "10px",
-                              }}
-                            >
-                              <input
-                                type="number"
-                                placeholder="0"
-                                name=""
-                                id=""
-                                value={userNameCount}
-                                onChange={handleUserNameCountChange}
-                                required
-                              />
-                            </div>
-                          </label>
-                        </div>
-                        <div className="divide">
-                          <label htmlFor="" className="splitter">
-                            <span>
-                              <h2>Link Number</h2>
-                            </span>
-                            <div
-                              style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                marginTop: "10px",
-                              }}
-                            >
-                              <input
-                                type="number"
-                                name=""
-                                id=""
-                                required
-                                value={linkNumber}
-                                onChange={handleLinkNumberChange}
-                              />
-                            </div>
-                          </label>
-                        </div>
-                        <div className="divide">
-                          <label htmlFor="" className="splitter">
-                            <span>
-                              <h2>URL</h2>
-                            </span>
-                            <div
-                              style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                marginTop: "10px",
-                              }}
-                            >
-                              <input
-                                type="url"
-                                name=""
-                                id=""
-                                required
-                                value={url}
-                                onChange={hanldeUrlChange}
-                              />
-                            </div>
-                          </label>
-                        </div>
-                      </div>
-                      {/* <div className="formmiddlesection">
-               <label htmlFor="">
-                 <h2>User Name Count</h2>
-               </label>
-               <input type="number" name="" id="" placeholder="input number" />
-             </div>
-             <div className="formmidlowsection">
-               <select className="" name="choose" id="">
-                 <option value="">Choose Members</option>
-                 <option value="">ssss</option>
-                 <option value="">ssss</option>
-                 <option value="">ssss</option>
-                 <option value="">ssss</option>
-                 <option value="">ssss</option>
-                 <option value="">ssss</option>
-               </select>
-             </div> */}
-                      <div className="formmbuttonsection">
-                        <div className="buttonholder">
-                          <button>Generate Link</button>
-                        </div>
-                      </div>
-                    </form>
+                  <form onSubmit={GenerateLinkSubmit}>
+      <div className="formuppersection">
+        <label>
+          <h1>Fill Link Information</h1>
+        </label>
+      </div>
+
+      {/* First Input - Link Number */}
+      <div className="thirdform">
+        <div className="divide">
+          <label className="splitter">
+            <span>
+              <h2>Link Number</h2>
+            </span>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: "10px",
+              }}
+            >
+              <input
+                type="number"
+                required
+                value={linkNumber}
+                onChange={handleLinkNumberChange}
+                placeholder={`Enter a number between 1 and ${availableLink}`}
+              />
+            </div>
+          </label>
+        </div>
+
+        {/* Second Input - User Name Selection */}
+        <div className="divide">
+          <label className="splitter">
+            <span>
+              <h2>User Name Selection</h2>
+              <p>
+                {userNameCount.length} of {linkNumber || 0} usernames selected.
+              </p>
+            </span>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: "10px",
+              }}
+            >
+              <select
+                required
+                disabled={!isSecondInputEnabled || availableOptions.length === 0} // Disable if no more options are available
+                onChange={handleUserNameSelection}
+              >
+                <option value="">Choose a username</option>
+                {availableOptions.map((member, index) => (
+                  <option key={index} value={member.org_name}>
+                    {member.org_name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </label>
+        </div>
+
+        {/* Third Input - URL */}
+        <div className="divide">
+          <label className="splitter">
+            <span>
+              <h2>URL</h2>
+            </span>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: "10px",
+              }}
+            >
+              <input
+                type="url"
+                required
+                value={url}
+                onChange={handleUrlChange}
+                disabled={!isThirdInputEnabled} // Disable unless second input is correctly filled
+              />
+            </div>
+          </label>
+        </div>
+      </div>
+
+      {/* Submit Button */}
+      <div className="formmbuttonsection">
+        <div className="buttonholder">
+          <button type="submit">Generate Link</button>
+        </div>
+      </div>
+    </form>
                   </div>
                 </div>
               </>
             )}
           </div>
+          ) : (
+            <>
+            <Loader />
+            </>
+          )
+        }
         </>
       )}
     </>
