@@ -49,6 +49,7 @@
     "react-query": "^3.39.3",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.26.2",
+    "react-screentype-hook": "^1.0.18",
     "react-spinners": "^0.13.8",
     "react-toastify": "^10.0.4",
     "react-transition-group": "^4.4.5",

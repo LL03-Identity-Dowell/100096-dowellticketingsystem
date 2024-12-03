@@ -15,7 +15,7 @@ import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import logo from '../assets/logo.png';
 import { Avatar, Tooltip } from '@mui/material';
 import { useNavigate, useLocation  } from 'react-router-dom';
-import useScreenType from '../hooks/useScreenType';
+// import useScreenType from '../hooks/useScreenType';
 import SideBar from './shared/SideBar';
 
 export default function Header() {

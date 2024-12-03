@@ -1,12 +1,16 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { getTicketByIdApi } from '@/services/api.services';
 
 const Queuing = () => {
   const { id } = useParams();
+
+
   const position = 4;
   const waiting_time = 30; 
 
   const [remainingTime, setRemainingTime] = useState(waiting_time * 60); 
+  const [ticketData, setTicketData] = useState([])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -23,6 +27,20 @@ const Queuing = () => {
     const seconds = time % 60;
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
+
+  useEffect(() => {
+   
+ const fetchTicket = async () => {
+  try {
+    const response = await getTicketByIdApi(id)
+    console.log(response.data.statusCode);
+  
+  } catch (error) {
+    console.log(error.message);
+  }
+ }
+ fetchTicket();
+  }, [ ])
 
   return (
     <div className="max-w-full min-h-screen flex items-center justify-center">
