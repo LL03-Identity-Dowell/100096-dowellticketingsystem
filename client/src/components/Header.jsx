@@ -17,6 +17,7 @@ import { Avatar, Tooltip } from '@mui/material';
 import { useNavigate, useLocation  } from 'react-router-dom';
 // import useScreenType from '../hooks/useScreenType';
 import SideBar from './shared/SideBar';
+import useScreenType from "react-screentype-hook";
 
 export default function Header() {
   const { isMobile } = useScreenType();

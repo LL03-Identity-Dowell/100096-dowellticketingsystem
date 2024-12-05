@@ -9,13 +9,7 @@ import cors from 'cors'
 const app = express()
 
 app.use(helmet())
-app.use(
-    cors({
-        origin: true, // Allow all origins
-        methods: ['GET', 'POST', 'PUT', 'DELETE'], // Define allowed methods
-        credentials: true // Allow cookies
-    })
-)
+app.use(cors())
 app.use(express.json())
 
 app.use('/api/v1', router)
