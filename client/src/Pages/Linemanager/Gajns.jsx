@@ -336,7 +336,7 @@ const Form = ({ id }) => {
     e.preventDefault();
 
     // Validation to ensure all fields are filled
-    if (!linkNumber || userNameCount.length !== linkNumber || !url) {
+    if (!linkNumber || userNameCount.length !== linkNumber) {
       alert("Please fill all fields correctly.");
       return;
     }
@@ -1186,30 +1186,7 @@ const Form = ({ id }) => {
           </label>
         </div>
 
-        {/* Third Input - URL */}
-        <div className="divide">
-          <label className="splitter">
-            <span>
-              <h2>URL</h2>
-            </span>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                marginTop: "10px",
-              }}
-            >
-              <input
-                type="url"
-                required
-                value={url}
-                onChange={handleUrlChange}
-                disabled={!isThirdInputEnabled} // Disable unless second input is correctly filled
-              />
-            </div>
-          </label>
-        </div>
+        
       </div>
 
       {/* Submit Button */}
