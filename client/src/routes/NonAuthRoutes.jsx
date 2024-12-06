@@ -10,7 +10,7 @@ const NonAuthRoutes = [
   { path: '/healthcheck', element: <Healthcheck /> },
   { path: '/', element: <CreateTicket /> },
   { path: '/queuing/:id', element: <Queuing/> },
-  { path: '/linemanager', element: <Forms /> },
+  { path: '/admin/linemanager', element: <Forms /> },
   { path: '/room', element: <CreateRoom /> },
   {path: '/chatroom/:id', element: <Room/>}
 ];
