@@ -7,10 +7,10 @@ const topicSchema = new mongoose.Schema({
         required: true,
         default: uuidv4  // Correctly using uuid.v4() here
     },
-    // room_name: {
-    //     type: String,
-    //     required: true
-    // },
+    name: {
+        type: String,
+        required: true
+    },
     workspace_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Workspace',  // It's good practice to define the ref for population

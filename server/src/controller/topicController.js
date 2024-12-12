@@ -4,10 +4,10 @@ import Room from "../models/roomModel.js";  // Assuming the Room model is in mod
 
 // Create a new topic
 export const createTopic = async (req, res) => {
-    const { workspace_id } = req.body;
+    const { workspace_id, name } = req.body;
 
-    if (!workspace_id) {
-        return res.status(400).json({ success: false, message: "Workspace ID are required" });
+    if (!workspace_id || !name) {
+        return res.status(400).json({ success: false, message: "Workspace ID and topic name are required" });
     }
 
     try {
@@ -24,7 +24,7 @@ export const createTopic = async (req, res) => {
         // }
 
         const newTopic = new Topic({
-
+            name,
             workspace_id
         });
 
@@ -69,7 +69,7 @@ export const getTopicById = async (req, res) => {
 // Update a topic's details
 export const updateTopic = async (req, res) => {
     const { id } = req.params;
-    const { workspace_id } = req.body;
+    const { workspace_id, name } = req.body;
 
     try {
         const topic = await Topic.findById(id);
@@ -77,7 +77,7 @@ export const updateTopic = async (req, res) => {
             return res.status(404).json({ success: false, message: "Topic not found" });
         }
 
-        topic.room_name = room_name || topic.room_name;
+        topic.name = name || topic.name;
         topic.workspace_id = workspace_id || topic.workspace_id;
 
         await topic.save();
