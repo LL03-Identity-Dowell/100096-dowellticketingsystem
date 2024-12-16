@@ -1,6 +1,16 @@
 version: '3.9'
 
 services:
+    websocket-server:
+        build:
+            context: ./web-socket-server
+            dockerfile: docker/development/Dockerfile
+        container_name: websocket-server
+        restart: always
+        networks:
+            - queue-net
+        ports:
+            - "8080:8080"
     mongo:
         container_name: mongo_container
         image: 'mongo'
@@ -30,6 +40,7 @@ services:
             - ./client/package.json:/usr/src/app/package.json
         depends_on:
             - server
+            - websocket-server
         networks:
             - queue-net
 
@@ -42,6 +53,7 @@ services:
             - '5000:5000'
         depends_on:
             - mongo
+            - websocket-server
         env_file:
             - ./.env.development
         volumes:
@@ -52,7 +64,7 @@ services:
             - queue-net
 
     zookeeper:
-        
+
         container_name: zookeeper
         image: confluentinc/cp-zookeeper:latest
         environment:

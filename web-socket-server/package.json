@@ -1,0 +1,21 @@
+{
+  "name": "ws-server",
+  "version": "1.0.0",
+  "description": "\"Help in building the backbone of the chat\"",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Mbuthia",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "ws": "^8.18.0",
+    "cross-env": "^7.0.3",
+    "cors": "^2.8.5",
+    "dotenv-flow": "^4.1.0"
+  }
+}
