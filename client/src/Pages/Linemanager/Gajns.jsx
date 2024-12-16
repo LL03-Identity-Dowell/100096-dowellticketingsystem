@@ -224,7 +224,7 @@ const Form = ({ id }) => {
         .post("http://localhost:5000/api/v1/topics",
 
           {
-            room_name: selectedTopic,
+            name: selectedTopic,
             workspace_id: workSpaceId
           }
         )
@@ -796,7 +796,7 @@ const Form = ({ id }) => {
                                               padding: "8px",
                                             }}
                                           >
-                                            {data.room_name}
+                                            {data.name}
                                           </td>
                                           <td
                                             style={{
